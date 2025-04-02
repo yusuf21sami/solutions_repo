@@ -3,28 +3,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def projectile_range(v0, theta, g=9.81):
+def projectile_range(v0, g):
     """
-    Atış menzilini hesaplar.
-
-    Parametreler:
-    v0: Başlangıç hızı (metre/saniye)
-    theta: Atış açısı (derece)
-    g: Yerçekimi ivmesi (metre/saniye^2)
-
-    Dönüş Değeri:
-    Atış menzili (metre)
+    Farklı açılar için yatay menzili hesaplar.
+    :param v0: Başlangıç hızı (m/s)
+    :param g: Yerçekimi ivmesi (m/s^2)
+    :return: Açılar (derece) ve karşılık gelen menziller (m)
     """
-    theta_rad = np.radians(theta)  # Dereceyi radyana çevir
-    return (v0**2 * np.sin(2 * theta_rad)) / g
+    angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında açılar
+    angles_rad = np.radians(angles)  # Radyana çevir
+    ranges = (v0**2 * np.sin(2 * angles_rad)) / g  # Menzil formülü
+    return angles, ranges
 
-v0 = 20  # Başlangıç hızı (metre/saniye)
-angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında 100 nokta oluştur
-ranges = projectile_range(v0, angles)  # Her açı için menzili hesapla
+# Parametreler
+initial_velocity = 20  # m/s
+gravity = 9.81  # m/s^2
 
-plt.plot(angles, ranges)  # Grafiği çiz
-plt.xlabel("Atış Açısı (derece)")  # X ekseni etiketi
-plt.ylabel("Menzil (metre)")  # Y ekseni etiketi
-plt.title("Menzil vs. Atış Açısı")  # Grafik başlığı
-plt.grid(True)  # Grid çizgilerini göster
-plt.show()  # Grafiği göster
+# Hesaplama
+angles, ranges = projectile_range(initial_velocity, gravity)
+
+# Grafik çizimi
+plt.figure(figsize=(8, 5))
+plt.plot(angles, ranges, label=f'Başlangıç hızı: {initial_velocity} m/s')
+plt.xlabel('Fırlatma Açısı (derece)')
+plt.ylabel('Yatay Menzil (m)')
+plt.title('Fırlatma Açısına Göre Menzil')
+plt.legend()
+plt.grid()
+plt.show()
+
