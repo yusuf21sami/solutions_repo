@@ -175,18 +175,28 @@
 <p>import numpy as np
 import matplotlib.pyplot as plt</p>
 <p>def projectile_range(v0, theta, g=9.81):
-    """Hesaplar menzilini."""
-    theta_rad = np.radians(theta)
-    return (v0**2 * np.sin(2 * theta_rad)) / g</p>
-<p>v0 = 20  # Başlangıç hızı
-angles = np.linspace(0, 90, 100)  # Açı aralığı
-ranges = projectile_range(v0, angles)</p>
-<p>plt.plot(angles, ranges)
-plt.xlabel("Atış Açısı (derece)")
-plt.ylabel("Menzil (metre)")
-plt.title("Menzil vs. Atış Açısı")
-plt.grid(True)
-plt.show()</p>
+    """
+    Atış menzilini hesaplar.</p>
+<pre><code>Parametreler:
+v0: Başlangıç hızı (metre/saniye)
+theta: Atış açısı (derece)
+g: Yerçekimi ivmesi (metre/saniye^2)
+
+Dönüş Değeri:
+Atış menzili (metre)
+"""
+theta_rad = np.radians(theta)  # Dereceyi radyana çevir
+return (v0**2 * np.sin(2 * theta_rad)) / g
+</code></pre>
+<p>v0 = 20  # Başlangıç hızı (metre/saniye)
+angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında 100 nokta oluştur
+ranges = projectile_range(v0, angles)  # Her açı için menzili hesapla</p>
+<p>plt.plot(angles, ranges)  # Grafiği çiz
+plt.xlabel("Atış Açısı (derece)")  # X ekseni etiketi
+plt.ylabel("Menzil (metre)")  # Y ekseni etiketi
+plt.title("Menzil vs. Atış Açısı")  # Grafik başlığı
+plt.grid(True)  # Grid çizgilerini göster
+plt.show()  # Grafiği göster</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
