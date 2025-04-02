@@ -172,7 +172,85 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>hello</p>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<h3 id="derivation-of-governing-equations">Derivation of Governing Equations</h3>
+<p>Let's consider a projectile launched from the origin <span class="arithmatex">\((0, 0)\)</span> with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(\theta\)</span> with respect to the horizontal. We'll neglect air resistance and assume constant gravitational acceleration <span class="arithmatex">\(g\)</span> acting downwards.</p>
+<p>The initial velocity components are:</p>
+<ul>
+<li><span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span></li>
+<li><span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span></li>
+</ul>
+<p>The acceleration components are:</p>
+<ul>
+<li><span class="arithmatex">\(a_x = 0\)</span></li>
+<li><span class="arithmatex">\(a_y = -g\)</span></li>
+</ul>
+<p>Using the kinematic equations, we can find the velocity and position components as a function of time <span class="arithmatex">\(t\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(v_x(t) = v_{0x} = v_0 \cos(\theta)\)</span></li>
+<li>
+<p><span class="arithmatex">\(v_y(t) = v_{0y} - gt = v_0 \sin(\theta) - gt\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(x(t) = v_{0x}t = v_0 \cos(\theta)t\)</span></p>
+</li>
+<li><span class="arithmatex">\(y(t) = v_{0y}t - \frac{1}{2}gt^2 = v_0 \sin(\theta)t - \frac{1}{2}gt^2\)</span></li>
+</ul>
+<h3 id="family-of-solutions">Family of Solutions</h3>
+<p>By varying the initial velocity <span class="arithmatex">\(v_0\)</span> and the launch angle <span class="arithmatex">\(\theta\)</span>, we generate a family of parabolic trajectories. Each set of <span class="arithmatex">\((v_0, \theta)\)</span> defines a unique trajectory.</p>
+<h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
+<h3 id="range-equation">Range Equation</h3>
+<p>To find the range <span class="arithmatex">\(R\)</span>, we need to determine the time <span class="arithmatex">\(T\)</span> when the projectile lands (<span class="arithmatex">\(y(T) = 0\)</span>).</p>
+<p><span class="arithmatex">\(0 = v_0 \sin(\theta)T - \frac{1}{2}gT^2\)</span></p>
+<p><span class="arithmatex">\(T(v_0 \sin(\theta) - \frac{1}{2}gT) = 0\)</span></p>
+<p><span class="arithmatex">\(T = 0\)</span> (initial time) or <span class="arithmatex">\(T = \frac{2v_0 \sin(\theta)}{g}\)</span> (time of flight)</p>
+<p>The range <span class="arithmatex">\(R\)</span> is the horizontal distance traveled during this time:</p>
+<p><span class="arithmatex">\(R = x(T) = v_0 \cos(\theta)T = v_0 \cos(\theta) \frac{2v_0 \sin(\theta)}{g}\)</span></p>
+<p>Using the trigonometric identity <span class="arithmatex">\(2\sin(\theta)\cos(\theta) = \sin(2\theta)\)</span>, we get:</p>
+<p><span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span></p>
+<h3 id="influence-of-parameters">Influence of Parameters</h3>
+<ul>
+<li><strong>Initial Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: The range is proportional to the square of the initial velocity. Higher velocities result in significantly larger ranges.</li>
+<li><strong>Launch Angle (<span class="arithmatex">\(\theta\)</span>)</strong>: The range is proportional to <span class="arithmatex">\(\sin(2\theta)\)</span>. The maximum range occurs when <span class="arithmatex">\(\sin(2\theta) = 1\)</span>, which means <span class="arithmatex">\(2\theta = 90^\circ\)</span> or <span class="arithmatex">\(\theta = 45^\circ\)</span>.</li>
+<li><strong>Gravitational Acceleration (<span class="arithmatex">\(g\)</span>)</strong>: The range is inversely proportional to <span class="arithmatex">\(g\)</span>. On planets with lower gravity, the range will be greater.</li>
+</ul>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
+<ul>
+<li><strong>Sports</strong>: Optimizing the launch angle in sports like golf, baseball, and football to achieve maximum distance.</li>
+<li><strong>Military</strong>: Calculating the trajectory of artillery shells and rockets.</li>
+<li><strong>Engineering</strong>: Designing sprinkler systems, fireworks displays, and other systems involving projectiles.</li>
+<li><strong>Astrophysics</strong>: Calculating the trajectories of celestial bodies.</li>
+<li><strong>Uneven Terrain</strong>: By adjusting the landing height, the range equations can be modified to model projectiles landing on slopes.</li>
+<li><strong>Air Resistance</strong>: Adding a drag term to the differential equations can model the effects of air resistance. This complicates the equations significantly, usually requiring numerical solutions.</li>
+</ul>
+<h2 id="4-implementation">4. Implementation</h2>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>def projectile_range(v0, theta, g=9.81):
+    """Calculates the range of a projectile."""
+    theta_rad = np.radians(theta)
+    return (v0**2 * np.sin(2 * theta_rad)) / g</p>
+<p>def plot_range_vs_angle(v0_values, g=9.81):
+    """Plots range vs. angle for given initial velocities."""
+    angles = np.linspace(0, 90, 100)
+    plt.figure(figsize=(10, 6))
+    for v0 in v0_values:
+        ranges = projectile_range(v0, angles, g)
+        plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
+    plt.xlabel('Launch Angle (degrees)')
+    plt.ylabel('Range (meters)')
+    plt.title('Projectile Range vs. Launch Angle')
+    plt.legend()
+    plt.grid(True)
+    plt.show()</p>
+<h1 id="example-usage">Example usage</h1>
+<p>v0_values = [10, 20, 30]
+plot_range_vs_angle(v0_values)</p>
+<h1 id="example-with-different-gravity">Example with different gravity.</h1>
+<p>v0_values = [20]
+plot_range_vs_angle(v0_values, g=1.62) # Moon gravity.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
