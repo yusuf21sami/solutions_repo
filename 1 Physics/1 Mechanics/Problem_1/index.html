@@ -174,29 +174,31 @@
 <h1 id="problem-1">Problem 1</h1>
 <p>import numpy as np
 import matplotlib.pyplot as plt</p>
-<p>def projectile_range(v0, theta, g=9.81):
+<p>def projectile_range(v0, g):
     """
-    Atış menzilini hesaplar.</p>
-<pre><code>Parametreler:
-v0: Başlangıç hızı (metre/saniye)
-theta: Atış açısı (derece)
-g: Yerçekimi ivmesi (metre/saniye^2)
-
-Dönüş Değeri:
-Atış menzili (metre)
-"""
-theta_rad = np.radians(theta)  # Dereceyi radyana çevir
-return (v0**2 * np.sin(2 * theta_rad)) / g
-</code></pre>
-<p>v0 = 20  # Başlangıç hızı (metre/saniye)
-angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında 100 nokta oluştur
-ranges = projectile_range(v0, angles)  # Her açı için menzili hesapla</p>
-<p>plt.plot(angles, ranges)  # Grafiği çiz
-plt.xlabel("Atış Açısı (derece)")  # X ekseni etiketi
-plt.ylabel("Menzil (metre)")  # Y ekseni etiketi
-plt.title("Menzil vs. Atış Açısı")  # Grafik başlığı
-plt.grid(True)  # Grid çizgilerini göster
-plt.show()  # Grafiği göster</p>
+    Farklı açılar için yatay menzili hesaplar.
+    :param v0: Başlangıç hızı (m/s)
+    :param g: Yerçekimi ivmesi (m/s^2)
+    :return: Açılar (derece) ve karşılık gelen menziller (m)
+    """
+    angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında açılar
+    angles_rad = np.radians(angles)  # Radyana çevir
+    ranges = (v0**2 * np.sin(2 * angles_rad)) / g  # Menzil formülü
+    return angles, ranges</p>
+<h1 id="parametreler">Parametreler</h1>
+<p>initial_velocity = 20  # m/s
+gravity = 9.81  # m/s^2</p>
+<h1 id="hesaplama">Hesaplama</h1>
+<p>angles, ranges = projectile_range(initial_velocity, gravity)</p>
+<h1 id="grafik-cizimi">Grafik çizimi</h1>
+<p>plt.figure(figsize=(8, 5))
+plt.plot(angles, ranges, label=f'Başlangıç hızı: {initial_velocity} m/s')
+plt.xlabel('Fırlatma Açısı (derece)')
+plt.ylabel('Yatay Menzil (m)')
+plt.title('Fırlatma Açısına Göre Menzil')
+plt.legend()
+plt.grid()
+plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
