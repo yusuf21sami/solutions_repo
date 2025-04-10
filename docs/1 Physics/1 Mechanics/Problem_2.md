@@ -60,6 +60,6 @@ We will later explore:
 
 ![alt text](image-2.png)
 
-> **Explanation:** This graph illustrates the steady-state motion of a forced damped pendulum, where the system oscillates with constant amplitude and a fixed phase shift relative to the driving force.
+print(**Explanation:** This graph illustrates the steady-state motion of a forced damped pendulum, where the system oscillates with constant amplitude and a fixed phase shift relative to the driving force.)
 
 
