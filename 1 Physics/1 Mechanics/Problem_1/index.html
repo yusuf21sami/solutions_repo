@@ -47,8 +47,6 @@
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
-<ul class="current">
-</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
 </li>
@@ -171,34 +169,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<p>import numpy as np
-import matplotlib.pyplot as plt</p>
-<p>def projectile_range(v0, g):
-    """
-    Farklı açılar için yatay menzili hesaplar.
-    :param v0: Başlangıç hızı (m/s)
-    :param g: Yerçekimi ivmesi (m/s^2)
-    :return: Açılar (derece) ve karşılık gelen menziller (m)
-    """
-    angles = np.linspace(0, 90, 100)  # 0 ile 90 derece arasında açılar
-    angles_rad = np.radians(angles)  # Radyana çevir
-    ranges = (v0**2 * np.sin(2 * angles_rad)) / g  # Menzil formülü
-    return angles, ranges</p>
-<h1 id="parametreler">Parametreler</h1>
-<p>initial_velocity = 20  # m/s
-gravity = 9.81  # m/s^2</p>
-<h1 id="hesaplama">Hesaplama</h1>
-<p>angles, ranges = projectile_range(initial_velocity, gravity)</p>
-<h1 id="grafik-cizimi">Grafik çizimi</h1>
-<p>plt.figure(figsize=(8, 5))
-plt.plot(angles, ranges, label=f'Başlangıç hızı: {initial_velocity} m/s')
-plt.xlabel('Fırlatma Açısı (derece)')
-plt.ylabel('Yatay Menzil (m)')
-plt.title('Fırlatma Açısına Göre Menzil')
-plt.legend()
-plt.grid()
-plt.show()</p>
+<p>print(yusuf)</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
