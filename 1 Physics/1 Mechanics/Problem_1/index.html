@@ -215,9 +215,8 @@
 <div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
 <h3 id="variations-with-initial-conditions">Variations with Initial Conditions</h3>
 <p>As the angle <span class="arithmatex">\( \theta \)</span> changes, the range of the projectile also changes. The sine function <span class="arithmatex">\( \sin(2\theta) \)</span> shows how the range is maximized at an angle of <span class="arithmatex">\( 45^\circ \)</span>, where the value of <span class="arithmatex">\( \sin(2\theta) \)</span> is 1.</p>
-<p>Thus, the range is a function of the launch angle <span class="arithmatex">\( \theta \)</span>, initial velocity <span class="arithmatex">\( v_0 \)</span>, and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
+<p>Thus, the range is a function of the launch angle  $$ \theta $$ , initial velocity $$  v_0 $$ , and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
 <p><img alt="alt text" src="../image-1.png"/></p>
-<p><img alt="alt text" src="../image-2.png"/></p>
 <h2 id="analysis-of-the-range">Analysis of the Range:</h2>
 <h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
 <h2 id="analysis-of-the-range_1">Analysis of the Range</h2>
@@ -237,7 +236,51 @@
 <div class="arithmatex">\[ R \propto v_0^2 \]</div>
 <p>This means that if the initial velocity <span class="arithmatex">\( v_0 \)</span> is increased, the range of the projectile increases as well. For example, doubling the initial velocity would quadruple the range, assuming the angle of projection and gravitational acceleration remain constant.</p>
 <h3 id="influence-of-gravitational-acceleration">Influence of Gravitational Acceleration</h3>
-<p>The range <span class="arithmatex">\( R \)</span> is</p>
+<p>The range <span class="arithmatex">\( R \)</span> is inversely proportional to the acceleration due to gravity <span class="arithmatex">\( g \)</span>:</p>
+<div class="arithmatex">\[ R \propto \frac{1}{g} \]</div>
+<p>This means that in regions with lower gravitational acceleration (e.g., on the Moon compared to Earth), the range of the projectile would be greater. If the gravitational acceleration <span class="arithmatex">\( g \)</span> is decreased, the range increases, assuming all other factors remain constant.</p>
+<h3 id="combined-effect-of-parameters">Combined Effect of Parameters</h3>
+<p>The horizontal range depends on the combined effects of the initial velocity, the angle of projection, and gravitational acceleration. The optimal angle for the maximum range is <span class="arithmatex">\( 45^\circ \)</span>, but the exact range achieved also depends on how large the initial velocity <span class="arithmatex">\( v_0 \)</span> is and how small the gravitational acceleration $$ g $$ is. </p>
+<p>In summary:
+- The range is maximized at $$ \theta = 45^\circ $$ .
+- A higher initial velocity increases the range.
+- A lower gravitational acceleration increases the range.</p>
+<p><img alt="alt text" src="../image.png"/> </p>
+<h2 id="practical-applications">Practical Applications</h2>
+<h3 id="projectiles-on-uneven-terrain">Projectiles on Uneven Terrain</h3>
+<p>The model derived for projectile motion assumes a flat horizontal surface, where the projectile lands at the same height from which it was launched. However, in real-world scenarios, projectiles are often launched on uneven terrain, such as hilly or sloped surfaces. In these cases, the range calculation becomes more complex.</p>
+<p>To adapt the model for uneven terrain, we need to account for the change in height between the launch point and the landing point. The range equation must be modified to include the initial and final vertical displacements. The general form of the equation in the presence of a slope (with angle <span class="arithmatex">\( \alpha \)</span>) is:</p>
+<div class="arithmatex">\[ y(t) = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
+<p>Where the final vertical displacement <span class="arithmatex">\( y(t) \)</span> will equal the slope height <span class="arithmatex">\( h \)</span>, and we would solve for <span class="arithmatex">\( t \)</span> and the corresponding range.</p>
+<p>In this case, numerical methods or simulations are often employed to solve for the time of flight and range, as the equation becomes nonlinear due to the varying terrain height.</p>
+<h3 id="air-resistance">Air Resistance</h3>
+<p>In reality, air resistance plays a significant role in the motion of projectiles, especially at high velocities. Air resistance acts against the motion of the projectile, slowing it down in both the horizontal and vertical directions. This introduces a non-conservative force, and the equations of motion must be modified accordingly.</p>
+<p>The force due to air resistance is typically modeled as:</p>
+<div class="arithmatex">\[ F_{\text{drag}} = \frac{1}{2} C_d \rho A v^2 \]</div>
+<p>Where:
+- <span class="arithmatex">\( C_d \)</span> is the drag coefficient (dependent on the shape of the object),
+- <span class="arithmatex">\( \rho \)</span> is the air density,
+- <span class="arithmatex">\( A \)</span> is the cross-sectional area of the projectile,
+- <span class="arithmatex">\( v \)</span> is the velocity of the projectile.</p>
+<p>To account for air resistance, the motion equations must be solved using the following system of differential equations:</p>
+<ol>
+<li>
+<p>Horizontal direction: 
+   $$ m \frac{d^2 x}{dt^2} = -\frac{1}{2} C_d \rho A v \frac{dx}{dt} $$</p>
+</li>
+<li>
+<p>Vertical direction:
+   $$ m \frac{d^2 y}{dt^2} = -mg - \frac{1}{2} C_d \rho A v \frac{dy}{dt} $$</p>
+</li>
+</ol>
+<p>Here, <span class="arithmatex">\( v = \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \)</span> represents the velocity magnitude.</p>
+<p>Incorporating air resistance requires numerical methods, such as Euler's method or Runge-Kutta methods, to solve these coupled differential equations. This makes the problem significantly more complex but provides a more accurate model of projectile motion in the real world.</p>
+<h3 id="practical-considerations">Practical Considerations</h3>
+<ul>
+<li><strong>Accuracy of the Model</strong>: In practical applications, adjustments for air resistance and terrain are crucial to making accurate predictions. In engineering, for example, understanding these factors is essential for designing projectiles, missiles, or sports equipment.</li>
+<li><strong>Applications in Sports</strong>: In sports such as basketball, soccer, or golf, understanding projectile motion with air resistance is crucial to predicting ball trajectories and optimizing performance.</li>
+<li><strong>Military and Aerospace Engineering</strong>: The design of artillery, missiles, and space missions often requires accounting for air resistance and uneven terrain, especially when the projectiles travel at high speeds and long distances.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
