@@ -61,46 +61,26 @@ Thus, the range is a function of the launch angle \( \theta \), initial velocity
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Plot style and font settings
-plt.style.use('seaborn-vibrant')
-plt.rcParams.update({
-    "font.size": 12,
-    "figure.figsize": (8, 5),
-    "axes.titlesize": 14,
-    "axes.labelsize": 12,
-    "legend.fontsize": 10,
-    "xtick.labelsize": 10,
-    "ytick.labelsize": 10,
-    "axes.grid": True,
-    "font.family": "DejaVu Sans"
-})
+# Sabitler
+v0 = 20  # m/s
+g = 9.81  # m/s^2
 
-# Constants
-v0 = 20  # Initial velocity in m/s
-g = 9.81  # Gravitational acceleration in m/s^2
-
-# Angle values in degrees and radians
+# Açılar (derece cinsinden)
 angles_deg = np.linspace(0, 90, 500)
 angles_rad = np.radians(angles_deg)
 
-# Range calculation
-ranges = (v0 ** 2 * np.sin(2 * angles_rad)) / g
+# Menzil hesaplama
+range_values = (v0**2 * np.sin(2 * angles_rad)) / g
 
-# Plotting
-plt.figure()
-plt.plot(angles_deg, ranges, color='blue', label='Range vs Angle')
-plt.axvline(45, color='red', linestyle='--', label='Maximum Range Angle (45°)')
-
-plt.title("Projectile Range vs Launch Angle")
-plt.xlabel("Launch Angle (°)")
-plt.ylabel("Range (m)")
+# Grafik çizimi
+plt.figure(figsize=(8,5))
+plt.plot(angles_deg, range_values, label="Range vs Angle", color='blue')
+plt.title("Açıya Göre Menzil")
+plt.xlabel("Atış Açısı (°)")
+plt.ylabel("Menzil (m)")
+plt.grid(True)
+plt.axvline(45, color='red', linestyle='--', label='Maksimum Menzil Açısı (45°)')
 plt.legend()
-plt.tight_layout()
-
-# Save as PNG (for website use)
-plt.savefig("range_vs_angle.png", dpi=300, bbox_inches='tight')
-
-# Show (for testing in local Python or Colab; won't show on website automatically)
 plt.show()
 
 ## Analysis of the Range:
