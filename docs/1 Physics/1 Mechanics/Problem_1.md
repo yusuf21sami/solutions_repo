@@ -61,7 +61,7 @@ Thus, the range is a function of the launch angle \( \theta \), initial velocity
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Stil ve yazı tipi ayarları
+# Plot style and font settings
 plt.style.use('seaborn-vibrant')
 plt.rcParams.update({
     "font.size": 12,
@@ -72,38 +72,36 @@ plt.rcParams.update({
     "xtick.labelsize": 10,
     "ytick.labelsize": 10,
     "axes.grid": True,
-    "font.family": "DejaVu Sans"  # Türkçe karakter desteği için
+    "font.family": "DejaVu Sans"
 })
 
-# Fiziksel sabitler
-v0 = 20  # Başlangıç hızı (m/s)
-g = 9.81  # Yerçekimi ivmesi (m/s^2)
+# Constants
+v0 = 20  # Initial velocity in m/s
+g = 9.81  # Gravitational acceleration in m/s^2
 
-# Açı değerleri (derece)
-acilar = np.linspace(0, 90, 500)
-acilar_radyan = np.radians(acilar)
+# Angle values in degrees and radians
+angles_deg = np.linspace(0, 90, 500)
+angles_rad = np.radians(angles_deg)
 
-# Menzil hesaplama
-menzil = (v0 ** 2 * np.sin(2 * acilar_radyan)) / g
+# Range calculation
+ranges = (v0 ** 2 * np.sin(2 * angles_rad)) / g
 
-# Grafik çizimi
+# Plotting
 plt.figure()
-plt.plot(acilar, menzil, color='blue', label='Menzil vs Açı')
-plt.axvline(45, color='red', linestyle='--', label='Maksimum Menzil Açısı (45°)')
+plt.plot(angles_deg, ranges, color='blue', label='Range vs Angle')
+plt.axvline(45, color='red', linestyle='--', label='Maximum Range Angle (45°)')
 
-plt.title("Açıya Göre Menzil")
-plt.xlabel("Atış Açısı (°)")
-plt.ylabel("Menzil (m)")
+plt.title("Projectile Range vs Launch Angle")
+plt.xlabel("Launch Angle (°)")
+plt.ylabel("Range (m)")
 plt.legend()
 plt.tight_layout()
 
-# Grafik hem gösterilir hem .png olarak kaydedilir
-plt.savefig("aciya_gore_menzil.png", dpi=300, bbox_inches='tight')  # Web sitenizde kullanmak için
+# Save as PNG (for website use)
+plt.savefig("range_vs_angle.png", dpi=300, bbox_inches='tight')
+
+# Show (for testing in local Python or Colab; won't show on website automatically)
 plt.show()
-
-
-<img src="aciya_gore_menzil.png" alt="Açıya Göre Menzil Grafiği" width="600">
-
 
 ## Analysis of the Range:
 
