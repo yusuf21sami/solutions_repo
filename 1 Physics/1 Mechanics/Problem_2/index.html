@@ -172,6 +172,47 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<p>We begin by examining the differential equation that governs the motion of a forced damped pendulum system:</p>
+<div class="arithmatex">\[
+\frac{d^2 \theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \sin \theta = A \cos(\omega t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( \theta(t) \)</span> is the angular displacement as a function of time.
+- <span class="arithmatex">\( b \)</span> is the damping coefficient.
+- <span class="arithmatex">\( \frac{g}{L} \sin\theta \)</span> represents the restoring torque due to gravity.
+- <span class="arithmatex">\( A \cos(\omega t) \)</span> is the external periodic driving force with amplitude <span class="arithmatex">\( A \)</span> and angular frequency <span class="arithmatex">\( \omega \)</span>.
+- <span class="arithmatex">\( g \)</span> is the gravitational acceleration.
+- <span class="arithmatex">\( L \)</span> is the length of the pendulum.</p>
+<p>This second-order non-linear differential equation encapsulates the complexity of the system due to the presence of both damping and driving forces.</p>
+<hr/>
+<h2 id="2-small-angle-approximation">2. Small-Angle Approximation</h2>
+<p>For small angular displacements (<span class="arithmatex">\( \theta \ll 1 \)</span> rad), we can use the approximation:</p>
+<div class="arithmatex">\[
+\sin \theta \approx \theta
+\]</div>
+<p>Thus, the governing equation simplifies to a linear second-order non-homogeneous differential equation:</p>
+<div class="arithmatex">\[
+\frac{d^2 \theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+\]</div>
+<p>This form is analytically tractable and allows us to derive approximate solutions for understanding the oscillatory behavior of the system.</p>
+<hr/>
+<h2 id="3-resonance-and-energy-considerations">3. Resonance and Energy Considerations</h2>
+<p>Under the small-angle approximation, the system behaves similarly to a driven harmonic oscillator. Resonance occurs when the driving frequency <span class="arithmatex">\( \omega \)</span> approaches the system’s natural frequency:</p>
+<div class="arithmatex">\[
+\omega_0 = \sqrt{\frac{g}{L}}
+\]</div>
+<p>At resonance, the amplitude of oscillation increases significantly, especially when damping is low. This results in a dramatic increase in the system’s energy.</p>
+<p>We will later explore:
+- The steady-state amplitude response as a function of driving frequency
+- The effect of varying damping <span class="arithmatex">\( b \)</span> on resonance sharpness
+- The transient and long-term energy behavior of the system</p>
+<hr/>
+<blockquote>
+<p><strong>Next Step:</strong> In the following sections, we will numerically simulate this system and visualize the time-domain and frequency-domain characteristics using Python.</p>
+</blockquote>
+<p><img alt="alt text" src="image-2.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
