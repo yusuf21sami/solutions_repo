@@ -216,6 +216,41 @@
 <h3 id="variations-with-initial-conditions">Variations with Initial Conditions</h3>
 <p>As the angle <span class="arithmatex">\( \theta \)</span> changes, the range of the projectile also changes. The sine function <span class="arithmatex">\( \sin(2\theta) \)</span> shows how the range is maximized at an angle of <span class="arithmatex">\( 45^\circ \)</span>, where the value of <span class="arithmatex">\( \sin(2\theta) \)</span> is 1.</p>
 <p>Thus, the range is a function of the launch angle <span class="arithmatex">\( \theta \)</span>, initial velocity <span class="arithmatex">\( v_0 \)</span>, and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
+<p>import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="stil-ve-yaz-tipi-ayarlar">Stil ve yazı tipi ayarları</h1>
+<p>plt.style.use('seaborn-vibrant')
+plt.rcParams.update({
+    "font.size": 12,
+    "figure.figsize": (8, 5),
+    "axes.titlesize": 14,
+    "axes.labelsize": 12,
+    "legend.fontsize": 10,
+    "xtick.labelsize": 10,
+    "ytick.labelsize": 10,
+    "axes.grid": True,
+    "font.family": "DejaVu Sans"  # Türkçe karakter desteği için
+})</p>
+<h1 id="fiziksel-sabitler">Fiziksel sabitler</h1>
+<p>v0 = 20  # Başlangıç hızı (m/s)
+g = 9.81  # Yerçekimi ivmesi (m/s^2)</p>
+<h1 id="ac-degerleri-derece">Açı değerleri (derece)</h1>
+<p>acilar = np.linspace(0, 90, 500)
+acilar_radyan = np.radians(acilar)</p>
+<h1 id="menzil-hesaplama">Menzil hesaplama</h1>
+<p>menzil = (v0 ** 2 * np.sin(2 * acilar_radyan)) / g</p>
+<h1 id="grafik-cizimi">Grafik çizimi</h1>
+<p>plt.figure()
+plt.plot(acilar, menzil, color='blue', label='Menzil vs Açı')
+plt.axvline(45, color='red', linestyle='--', label='Maksimum Menzil Açısı (45°)')</p>
+<p>plt.title("Açıya Göre Menzil")
+plt.xlabel("Atış Açısı (°)")
+plt.ylabel("Menzil (m)")
+plt.legend()
+plt.tight_layout()</p>
+<h1 id="grafik-hem-gosterilir-hem-png-olarak-kaydedilir">Grafik hem gösterilir hem .png olarak kaydedilir</h1>
+<p>plt.savefig("aciya_gore_menzil.png", dpi=300, bbox_inches='tight')  # Web sitenizde kullanmak için
+plt.show()</p>
 <p><img alt="Açıya Göre Menzil Grafiği" src="aciya_gore_menzil.png" width="600"/></p>
 <h2 id="analysis-of-the-range">Analysis of the Range:</h2>
 <h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
