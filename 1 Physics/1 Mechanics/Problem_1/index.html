@@ -47,6 +47,8 @@
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<ul class="current">
+</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
 </li>
@@ -169,7 +171,72 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<p>print(yusuf)</p>
+<h1 id="problem-1">Problem 1</h1>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="theoretical-foundation">Theoretical Foundation</h2>
+<p>We begin by considering the motion of a projectile under the influence of gravity. The motion in both the horizontal and vertical directions can be described using the following equations:</p>
+<h3 id="equations-of-motion">Equations of Motion</h3>
+<p>For a projectile launched with an initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> to the horizontal, we can break the velocity into horizontal and vertical components:</p>
+<ul>
+<li>
+<p>Horizontal velocity component: 
+  $$ v_{0x} = v_0 \cos(\theta) $$</p>
+</li>
+<li>
+<p>Vertical velocity component: 
+  $$ v_{0y} = v_0 \sin(\theta) $$</p>
+</li>
+</ul>
+<p>The equations of motion in the horizontal (<span class="arithmatex">\(x\)</span>) and vertical (<span class="arithmatex">\(y\)</span>) directions are given by:</p>
+<ol>
+<li>
+<p>Horizontal motion:
+   $$ x(t) = v_{0x} t = v_0 \cos(\theta) t $$</p>
+</li>
+<li>
+<p>Vertical motion:
+   $$ y(t) = v_{0y} t - \frac{1}{2} g t^2 = v_0 \sin(\theta) t - \frac{1}{2} g t^2 $$</p>
+</li>
+</ol>
+<p>Where:
+- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity
+- <span class="arithmatex">\( t \)</span> is the time of flight</p>
+<h3 id="time-of-flight">Time of Flight</h3>
+<p>To find the time of flight <span class="arithmatex">\( T \)</span>, we set the vertical displacement <span class="arithmatex">\( y(t) \)</span> equal to zero when the projectile lands:</p>
+<div class="arithmatex">\[ 0 = v_0 \sin(\theta) T - \frac{1}{2} g T^2 \]</div>
+<p>Solving for <span class="arithmatex">\( T \)</span>, we get:</p>
+<div class="arithmatex">\[ T = \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<h3 id="range-of-the-projectile">Range of the Projectile</h3>
+<p>The range <span class="arithmatex">\( R \)</span> is the horizontal distance the projectile travels before landing. Using the time of flight <span class="arithmatex">\( T \)</span>, the range can be determined from the horizontal motion equation:</p>
+<div class="arithmatex">\[ R = x(T) = v_0 \cos(\theta) T \]</div>
+<p>Substituting the expression for <span class="arithmatex">\( T \)</span>:</p>
+<div class="arithmatex">\[ R = v_0 \cos(\theta) \cdot \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<p>Simplifying the expression for the range:</p>
+<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
+<h3 id="variations-with-initial-conditions">Variations with Initial Conditions</h3>
+<p>As the angle <span class="arithmatex">\( \theta \)</span> changes, the range of the projectile also changes. The sine function <span class="arithmatex">\( \sin(2\theta) \)</span> shows how the range is maximized at an angle of <span class="arithmatex">\( 45^\circ \)</span>, where the value of <span class="arithmatex">\( \sin(2\theta) \)</span> is 1.</p>
+<p>Thus, the range is a function of the launch angle <span class="arithmatex">\( \theta \)</span>, initial velocity <span class="arithmatex">\( v_0 \)</span>, and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
+<p><img alt="alt text" src="../image-1.png"/> </p>
+<h2 id="analysis-of-the-range">Analysis of the Range:</h2>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="analysis-of-the-range_1">Analysis of the Range</h2>
+<h3 id="dependence-of-range-on-the-angle-of-projection">Dependence of Range on the Angle of Projection</h3>
+<p>From the previous derivation, we know the range <span class="arithmatex">\( R \)</span> of the projectile is given by the equation:</p>
+<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
+<p>Where:
+- <span class="arithmatex">\( v_0 \)</span> is the initial velocity
+- <span class="arithmatex">\( \theta \)</span> is the angle of projection
+- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity</p>
+<p>We can analyze the behavior of the range as a function of the angle of projection <span class="arithmatex">\( \theta \)</span>.</p>
+<p>The term <span class="arithmatex">\( \sin(2\theta) \)</span> in the range equation indicates that the range varies as a sinusoidal function of <span class="arithmatex">\( 2\theta \)</span>. The sine function reaches its maximum value of 1 when <span class="arithmatex">\( 2\theta = 90^\circ \)</span>, i.e., when <span class="arithmatex">\( \theta = 45^\circ \)</span>. Therefore, the maximum horizontal range is achieved when the angle of projection is <span class="arithmatex">\( 45^\circ \)</span>.</p>
+<p>The relationship between the range and the angle of projection is symmetric. For angles greater than <span class="arithmatex">\( 45^\circ \)</span>, the range decreases as the sine function decreases after reaching its maximum. For angles less than <span class="arithmatex">\( 45^\circ \)</span>, the range also decreases as the angle moves further away from <span class="arithmatex">\( 45^\circ \)</span>.</p>
+<p>Thus, the range is maximized when <span class="arithmatex">\( \theta = 45^\circ \)</span>, and for other angles, the range decreases symmetrically on either side of this optimal angle.</p>
+<h3 id="influence-of-initial-velocity">Influence of Initial Velocity</h3>
+<p>The range <span class="arithmatex">\( R \)</span> is directly proportional to the square of the initial velocity <span class="arithmatex">\( v_0 \)</span>:</p>
+<div class="arithmatex">\[ R \propto v_0^2 \]</div>
+<p>This means that if the initial velocity <span class="arithmatex">\( v_0 \)</span> is increased, the range of the projectile increases as well. For example, doubling the initial velocity would quadruple the range, assuming the angle of projection and gravitational acceleration remain constant.</p>
+<h3 id="influence-of-gravitational-acceleration">Influence of Gravitational Acceleration</h3>
+<p>The range <span class="arithmatex">\( R \)</span> is</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
