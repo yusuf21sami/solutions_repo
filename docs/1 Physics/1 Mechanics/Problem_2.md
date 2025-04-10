@@ -83,23 +83,21 @@ delta = np.arctan2(b * omega, (omega_0**2 - omega**2))
 theta = theta_amplitude * np.cos(omega * t - delta)
 
 # Plotting
-plt.figure(figsize=(10, 5))
-plt.plot(t, theta, label='Angular Displacement θ(t)', color='blue')
-plt.title("Forced Damped Pendulum - Steady-State Oscillation")
-plt.xlabel("Time (s)")
-plt.ylabel("Angular Displacement (rad)")
-plt.grid(True)
-plt.legend()
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.plot(t, theta, label='Angular Displacement θ(t)', color='blue')
+ax.set_title("Forced Damped Pendulum - Steady-State Oscillation")
+ax.set_xlabel("Time (s)")
+ax.set_ylabel("Angular Displacement (rad)")
+ax.grid(True)
+ax.legend()
 
-# Add explanation below plot
+# Add explanation below the plot
 explanation = (
     "The graph demonstrates how the pendulum reaches a sinusoidal oscillation\n"
     "with constant amplitude and phase relative to the driving force.\n"
     "This is the steady-state response of a forced damped pendulum."
 )
-
-# Display explanation as annotation (outside plot area)
-plt.figtext(0.5, -0.2, explanation, wrap=True, horizontalalignment='center', fontsize=10)
+fig.text(0.5, -0.15, explanation, wrap=True, ha='center', fontsize=10)
 
 plt.tight_layout()
 plt.show()
