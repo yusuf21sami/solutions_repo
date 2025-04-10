@@ -59,3 +59,8 @@ We will later explore:
 > **Next Step:** In the following sections, we will numerically simulate this system and visualize the time-domain and frequency-domain characteristics using Python.
 
 ![alt text](image-2.png)
+
+> **Explanation:**
+This graph illustrates the steady-state motion of a forced damped pendulum, where the system oscillates with constant amplitude and a fixed phase shift relative to the driving force.
+
+
