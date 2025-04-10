@@ -213,6 +213,41 @@
 <p><strong>Next Step:</strong> In the following sections, we will numerically simulate this system and visualize the time-domain and frequency-domain characteristics using Python.</p>
 </blockquote>
 <p><img alt="alt text" src="../image-2.png"/></p>
+<p>import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="parameters">Parameters</h1>
+<p>b = 0.5        # damping coefficient
+g = 9.81       # gravity
+L = 1.0        # pendulum length
+A = 1.2        # amplitude of driving force
+omega = 1.5    # driving frequency
+omega_0 = np.sqrt(g / L)  # natural frequency</p>
+<h1 id="time-array">Time array</h1>
+<p>t = np.linspace(0, 20, 1000)</p>
+<h1 id="steady-state-amplitude-and-phase">Steady-state amplitude and phase</h1>
+<p>denominator = np.sqrt((omega_0<strong>2 - omega</strong>2)<strong>2 + (b * omega)</strong>2)
+theta_amplitude = A / denominator
+delta = np.arctan2(b * omega, (omega_0<strong>2 - omega</strong>2))</p>
+<h1 id="solution">Solution</h1>
+<p>theta = theta_amplitude * np.cos(omega * t - delta)</p>
+<h1 id="plotting">Plotting</h1>
+<p>plt.figure(figsize=(10, 5))
+plt.plot(t, theta, label='Angular Displacement θ(t)', color='blue')
+plt.title("Forced Damped Pendulum - Steady-State Oscillation")
+plt.xlabel("Time (s)")
+plt.ylabel("Angular Displacement (rad)")
+plt.grid(True)
+plt.legend()</p>
+<h1 id="add-explanation-below-plot">Add explanation below plot</h1>
+<p>explanation = (
+    "The graph demonstrates how the pendulum reaches a sinusoidal oscillation\n"
+    "with constant amplitude and phase relative to the driving force.\n"
+    "This is the steady-state response of a forced damped pendulum."
+)</p>
+<h1 id="display-explanation-as-annotation-outside-plot-area">Display explanation as annotation (outside plot area)</h1>
+<p>plt.figtext(0.5, -0.2, explanation, wrap=True, horizontalalignment='center', fontsize=10)</p>
+<p>plt.tight_layout()
+plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
