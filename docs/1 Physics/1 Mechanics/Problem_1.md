@@ -58,7 +58,7 @@ As the angle \( \theta \) changes, the range of the projectile also changes. The
 
 Thus, the range is a function of the launch angle \( \theta \), initial velocity \( v_0 \), and gravity \( g \). Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## Analysis of the Range:
 
