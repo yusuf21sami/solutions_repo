@@ -63,34 +63,6 @@ We will later explore:
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parameters
-b = 0.5        # damping coefficient
-g = 9.81       # gravity
-L = 1.0        # pendulum length
-A = 1.2        # amplitude of driving force
-omega = 1.5    # driving frequency
-omega_0 = np.sqrt(g / L)  # natural frequency
-
-# Time array
-t = np.linspace(0, 20, 1000)
-
-# Steady-state amplitude and phase
-denominator = np.sqrt((omega_0**2 - omega**2)**2 + (b * omega)**2)
-theta_amplitude = A / denominator
-delta = np.arctan2(b * omega, (omega_0**2 - omega**2))
-
-# Solution
-theta = theta_amplitude * np.cos(omega * t - delta)
-
-# Plotting
-fig, ax = plt.subplots(figsize=(10, 5))
-ax.plot(t, theta, label='Angular Displacement θ(t)', color='blue')
-ax.set_title("Forced Damped Pendulum - Steady-State Oscillation")
-ax.set_xlabel("Time (s)")
-ax.set_ylabel("Angular Displacement (rad)")
-ax.grid(True)
-ax.legend()
-
 # Add explanation below the plot
 explanation = (
     "The graph demonstrates how the pendulum reaches a sinusoidal oscillation\n"
