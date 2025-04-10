@@ -349,6 +349,69 @@ Date: <em>[Date]</em> </p>
 </div>
 <p>"""</p>
 <p>display(HTML(description))</p>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum_2">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h2 id="1-introduction_1">1. Introduction</h2>
+<p>The forced damped pendulum is a fundamental example of a nonlinear dynamical system. It combines three main forces:
+- Gravitational restoring force
+- Damping (e.g., friction or air resistance)
+- External periodic driving force</p>
+<p>Such systems exhibit a wide variety of behaviors including periodic motion, bifurcations, and even chaos.</p>
+<h2 id="2-mathematical-model_1">2. Mathematical Model</h2>
+<p>The differential equation for a forced damped pendulum is given by:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( \theta(t) \)</span> is the angular displacement,
+- <span class="arithmatex">\( \gamma \)</span> is the damping coefficient,
+- <span class="arithmatex">\( \omega_0 \)</span> is the natural frequency of the pendulum,
+- <span class="arithmatex">\( A \)</span> is the amplitude of the external driving force,
+- <span class="arithmatex">\( \omega \)</span> is the driving frequency.</p>
+<p>This equation is nonlinear and typically solved using numerical methods due to the <span class="arithmatex">\( \sin(\theta) \)</span> term.</p>
+<h2 id="3-practical-applications_1">3. Practical Applications</h2>
+<ul>
+<li><strong>Energy Harvesting Devices</strong>: Oscillatory systems based on pendulum dynamics can be used to convert mechanical vibrations into electrical energy.</li>
+<li><strong>Suspension Bridges</strong>: Wind-induced resonance effects in long-span bridges can be analyzed with similar models.</li>
+<li><strong>Oscillating Circuits</strong>: Analogies between mechanical and electrical systems allow forced pendulum equations to model RLC circuits.</li>
+</ul>
+<h2 id="4-implementation_1">4. Implementation</h2>
+<ul>
+<li>Create a <strong>computational model</strong> to simulate the motion of a forced damped pendulum using numerical solvers such as <code>Runge-Kutta</code> methods.</li>
+<li><strong>Visualize the behavior</strong> of the system by changing parameters such as damping coefficient <span class="arithmatex">\( \gamma \)</span>, driving amplitude <span class="arithmatex">\( A \)</span>, and initial conditions <span class="arithmatex">\( \theta(0) \)</span>, <span class="arithmatex">\( \dot{\theta}(0) \)</span>.</li>
+<li>Plot <strong>phase diagrams</strong> (θ vs <span class="arithmatex">\( \dot{\theta} \)</span>) and <strong>Poincaré sections</strong> to study the transition from periodic motion to chaotic behavior.</li>
+</ul>
+<hr/>
+<h2 id="5-graphical-analysis">5. Graphical Analysis</h2>
+<blockquote>
+<p>🔧 <em>Plots and simulations (e.g., time series, phase space, bifurcation diagrams) will be included in this section in the next phase.</em></p>
+</blockquote>
+<hr/>
+<blockquote>
+<p><strong>Author</strong>: <em>[Your Name]</em><br/>
+<strong>Course / Project</strong>: <em>[Your Course or Institution]</em><br/>
+<strong>Date</strong>: <em>[Insert Date]</em> </p>
+</blockquote>
+<p><img alt="alt text" src="../image-5.png"/></p>
+<p>from IPython.display import display, HTML</p>
+<p>description = """</p>
+<div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;">
+<h3>Phase Space Diagram Explanation</h3>
+<p>
+        The phase space diagram above visualizes the dynamic behavior of a forced damped pendulum by plotting
+        angular velocity <strong>dθ/dt</strong> versus angular displacement <strong>θ</strong>.
+    </p>
+<p>
+        Initially, the system exhibits transient spiraling due to the damping force. As time progresses,
+        the trajectory converges into a closed loop, indicating the emergence of a stable oscillatory regime.
+        The system reaches a limit cycle — a repetitive, bounded trajectory characteristic of steady-state motion under periodic forcing.
+    </p>
+<p>
+        Phase diagrams like this are essential in analyzing nonlinear systems, as they help identify periodicity, damping effects,
+        and transitions to complex behaviors such as chaos.
+    </p>
+</div>
+<p>"""</p>
+<p>display(HTML(description))</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
