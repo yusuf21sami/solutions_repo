@@ -223,6 +223,74 @@
 <p>This graph illustrates the steady-state motion of a forced damped pendulum, where the system oscillates with constant amplitude and a fixed phase shift relative to the driving force.</p>
 </body>
 </html>
+<h2 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h2>
+<h3 id="influence-of-damping-coefficient-driving-amplitude-and-driving-frequency">• Influence of Damping Coefficient, Driving Amplitude, and Driving Frequency</h3>
+<p>To analyze the dynamics of a forced damped pendulum, we consider the general form of its equation of motion:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(<span class="arithmatex">\(\theta\)</span>\)</span> is the angular displacement,
+- <span class="arithmatex">\(<span class="arithmatex">\(\gamma\)</span>\)</span> is the damping coefficient,
+- <span class="arithmatex">\(<span class="arithmatex">\(\omega_0\)</span>\)</span> is the natural frequency of the pendulum,
+- <span class="arithmatex">\(<span class="arithmatex">\(A\)</span>\)</span> is the driving amplitude,
+- <span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span> is the driving frequency,
+- <span class="arithmatex">\(<span class="arithmatex">\(t\)</span>\)</span> is time.</p>
+<h4 id="damping-coefficient-gamma">Damping Coefficient (<span class="arithmatex">\(<span class="arithmatex">\(\gamma\)</span>\)</span>)</h4>
+<ul>
+<li>Controls how quickly the system loses energy.</li>
+<li>Higher values of <span class="arithmatex">\(<span class="arithmatex">\(\gamma\)</span>\)</span> result in faster dissipation of motion, suppressing oscillations over time.</li>
+<li>When <span class="arithmatex">\(<span class="arithmatex">\(\gamma = 0\)</span>\)</span>, the system is undamped.</li>
+</ul>
+<h4 id="driving-amplitude-a">Driving Amplitude (<span class="arithmatex">\(<span class="arithmatex">\(A\)</span>\)</span>)</h4>
+<ul>
+<li>Represents the magnitude of the external periodic force.</li>
+<li>A larger <span class="arithmatex">\(<span class="arithmatex">\(A\)</span>\)</span> increases the energy input into the system, potentially causing more complex motion.</li>
+</ul>
+<h4 id="driving-frequency-omega">Driving Frequency (<span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span>)</h4>
+<ul>
+<li>Determines how often the external force is applied per unit time.</li>
+<li>When <span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span> is close to the system's natural frequency <span class="arithmatex">\(<span class="arithmatex">\(\omega_0\)</span>\)</span>, resonance can occur, significantly amplifying oscillations.</li>
+<li>Mismatched <span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span> and <span class="arithmatex">\(<span class="arithmatex">\(\omega_0\)</span>\)</span> lead to beat patterns or chaotic behavior, depending on the system's parameters.</li>
+</ul>
+<hr/>
+<h3 id="transition-between-regular-and-chaotic-motion">• Transition Between Regular and Chaotic Motion</h3>
+<p>The forced damped pendulum exhibits a rich set of behaviors, ranging from predictable (regular) to unpredictable (chaotic) motion depending on the system parameters.</p>
+<ul>
+<li><strong>Regular Motion</strong>:</li>
+<li>Characterized by periodic or quasi-periodic oscillations.</li>
+<li>
+<p>Occurs for low to moderate driving amplitudes and specific damping values.</p>
+</li>
+<li>
+<p><strong>Chaotic Motion</strong>:</p>
+</li>
+<li>Exhibits sensitive dependence on initial conditions.</li>
+<li>Occurs at higher values of driving amplitude and certain ranges of driving frequency.</li>
+<li>Trajectories in phase space no longer form closed loops but rather fill regions densely.</li>
+</ul>
+<h4 id="physical-interpretations">Physical Interpretations</h4>
+<ul>
+<li>Chaotic behavior in a pendulum implies that long-term prediction becomes practically impossible.</li>
+<li>The interplay of damping, driving force, and nonlinearity (due to the <span class="arithmatex">\(<span class="arithmatex">\(\sin(\theta)\)</span>\)</span> term) creates a system where small changes can drastically alter future states.</li>
+</ul>
+<hr/>
+<blockquote>
+<p><strong>Note</strong>: In the next section, we will illustrate these effects using numerical simulations and graphical representations such as phase portraits and Poincaré sections.</p>
+</blockquote>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p>"""</p>
+<p>The plot illustrates the angular displacement <span class="arithmatex">\(<span class="arithmatex">\(\\theta(t)\)</span>\)</span> of a forced damped pendulum over time. The motion is governed by a nonlinear second-order differential equation:</p>
+<div class="arithmatex">\[
+\\frac{d^2\\theta}{dt^2} + \\gamma \\frac{d\\theta}{dt} + \\sin(\\theta) = A \\cos(\\omega t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(<span class="arithmatex">\(\\gamma = 0.2\)</span>\)</span> is the damping coefficient, representing energy dissipation,
+- <span class="arithmatex">\(<span class="arithmatex">\(A = 1.2\)</span>\)</span> is the amplitude of the periodic external driving force,
+- <span class="arithmatex">\(<span class="arithmatex">\(\\omega = \\frac{2}{3}\)</span>\)</span> is the angular frequency of the driving force.</p>
+<p>As observed in the graph, the pendulum exhibits complex, irregular oscillations due to the interplay between the damping force and the periodic driving. Initially, the amplitude of oscillations grows, showing energy input into the system. Over time, the system may enter a quasi-periodic or chaotic regime, depending on parameter values.</p>
+<p>This behavior is typical of nonlinear dynamical systems, where small changes in initial conditions or parameters can lead to significantly different outcomes — a hallmark of chaos theory.</p>
+<p>"""</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
