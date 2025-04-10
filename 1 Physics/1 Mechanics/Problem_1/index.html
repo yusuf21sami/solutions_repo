@@ -218,7 +218,7 @@
 <p>Thus, the range is a function of the launch angle <span class="arithmatex">\( \theta \)</span>, initial velocity <span class="arithmatex">\( v_0 \)</span>, and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
 <p>import numpy as np
 import matplotlib.pyplot as plt</p>
-<h1 id="stil-ve-yaz-tipi-ayarlar">Stil ve yazı tipi ayarları</h1>
+<h1 id="plot-style-and-font-settings">Plot style and font settings</h1>
 <p>plt.style.use('seaborn-vibrant')
 plt.rcParams.update({
     "font.size": 12,
@@ -229,29 +229,29 @@ plt.rcParams.update({
     "xtick.labelsize": 10,
     "ytick.labelsize": 10,
     "axes.grid": True,
-    "font.family": "DejaVu Sans"  # Türkçe karakter desteği için
+    "font.family": "DejaVu Sans"
 })</p>
-<h1 id="fiziksel-sabitler">Fiziksel sabitler</h1>
-<p>v0 = 20  # Başlangıç hızı (m/s)
-g = 9.81  # Yerçekimi ivmesi (m/s^2)</p>
-<h1 id="ac-degerleri-derece">Açı değerleri (derece)</h1>
-<p>acilar = np.linspace(0, 90, 500)
-acilar_radyan = np.radians(acilar)</p>
-<h1 id="menzil-hesaplama">Menzil hesaplama</h1>
-<p>menzil = (v0 ** 2 * np.sin(2 * acilar_radyan)) / g</p>
-<h1 id="grafik-cizimi">Grafik çizimi</h1>
+<h1 id="constants">Constants</h1>
+<p>v0 = 20  # Initial velocity in m/s
+g = 9.81  # Gravitational acceleration in m/s^2</p>
+<h1 id="angle-values-in-degrees-and-radians">Angle values in degrees and radians</h1>
+<p>angles_deg = np.linspace(0, 90, 500)
+angles_rad = np.radians(angles_deg)</p>
+<h1 id="range-calculation">Range calculation</h1>
+<p>ranges = (v0 ** 2 * np.sin(2 * angles_rad)) / g</p>
+<h1 id="plotting">Plotting</h1>
 <p>plt.figure()
-plt.plot(acilar, menzil, color='blue', label='Menzil vs Açı')
-plt.axvline(45, color='red', linestyle='--', label='Maksimum Menzil Açısı (45°)')</p>
-<p>plt.title("Açıya Göre Menzil")
-plt.xlabel("Atış Açısı (°)")
-plt.ylabel("Menzil (m)")
+plt.plot(angles_deg, ranges, color='blue', label='Range vs Angle')
+plt.axvline(45, color='red', linestyle='--', label='Maximum Range Angle (45°)')</p>
+<p>plt.title("Projectile Range vs Launch Angle")
+plt.xlabel("Launch Angle (°)")
+plt.ylabel("Range (m)")
 plt.legend()
 plt.tight_layout()</p>
-<h1 id="grafik-hem-gosterilir-hem-png-olarak-kaydedilir">Grafik hem gösterilir hem .png olarak kaydedilir</h1>
-<p>plt.savefig("aciya_gore_menzil.png", dpi=300, bbox_inches='tight')  # Web sitenizde kullanmak için
-plt.show()</p>
-<p><img alt="Açıya Göre Menzil Grafiği" src="aciya_gore_menzil.png" width="600"/></p>
+<h1 id="save-as-png-for-website-use">Save as PNG (for website use)</h1>
+<p>plt.savefig("range_vs_angle.png", dpi=300, bbox_inches='tight')</p>
+<h1 id="show-for-testing-in-local-python-or-colab-wont-show-on-website-automatically">Show (for testing in local Python or Colab; won't show on website automatically)</h1>
+<p>plt.show()</p>
 <h2 id="analysis-of-the-range">Analysis of the Range:</h2>
 <h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
 <h2 id="analysis-of-the-range_1">Analysis of the Range</h2>
