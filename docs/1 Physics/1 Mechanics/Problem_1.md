@@ -58,34 +58,8 @@ As the angle \( \theta \) changes, the range of the projectile also changes. The
 
 Thus, the range is a function of the launch angle \( \theta \), initial velocity \( v_0 \), and gravity \( g \). Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.
 
-import numpy as np
-import matplotlib.pyplot as plt
+<img src="aciya_gore_menzil.png" alt="Açıya Göre Menzil Grafiği" width="600">
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Sabitler
-v0 = 20  # Başlangıç hızı (m/s)
-g = 9.81  # Yerçekimi ivmesi (m/s^2)
-
-# Açılar (0° - 90° arası, derece cinsinden)
-angles_deg = np.linspace(0, 90, 500)
-angles_rad = np.radians(angles_deg)  # Radyana çevir
-
-# Menzil hesaplama
-range_vals = (v0 ** 2 * np.sin(2 * angles_rad)) / g
-
-# Grafik çizimi
-plt.figure(figsize=(8, 5))
-plt.plot(angles_deg, range_vals, color='blue')
-plt.title("Açıya Göre Menzil")
-plt.xlabel("Atış Açısı (°)")
-plt.ylabel("Menzil (m)")
-plt.grid(True)
-plt.axvline(45, color='red', linestyle='--', label='Maksimum menzil (45°)')
-plt.legend()
-plt.tight_layout()
-plt.show()
 
 
 
