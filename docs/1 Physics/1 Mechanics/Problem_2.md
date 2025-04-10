@@ -146,7 +146,6 @@ As observed in the graph, the pendulum exhibits complex, irregular oscillations 
 This behavior is typical of nonlinear dynamical systems, where small changes in initial conditions or parameters can lead to significantly different outcomes — a hallmark of chaos theory.
 
 """
-# Investigating the Dynamics of a Forced Damped Pendulum
 
 ## 1. Introduction
 
@@ -190,10 +189,6 @@ This equation does not have a general analytical solution and is typically studi
 
 ---
 
-> Prepared for: *[Your Course / Project Name]*  
-> Author: *[Your Name]*  
-> Date: *[Date]*  
-
 
 ![alt text](image-4.png)
 
@@ -217,7 +212,7 @@ description = """
 
 display(HTML(description))
 
-# Investigating the Dynamics of a Forced Damped Pendulum
+
 
 ## 1. Introduction
 
@@ -265,13 +260,9 @@ This equation is nonlinear and typically solved using numerical methods due to t
 
 ---
 
-> **Author**: *[Your Name]*  
-> **Course / Project**: *[Your Course or Institution]*  
-> **Date**: *[Insert Date]*  
 
 ![alt text](image-5.png)
 
-from IPython.display import display, HTML
 
 description = """
 <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;">
