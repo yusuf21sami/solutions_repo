@@ -59,3 +59,47 @@ We will later explore:
 > **Next Step:** In the following sections, we will numerically simulate this system and visualize the time-domain and frequency-domain characteristics using Python.
 
 ![alt text](image-2.png)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+b = 0.5        # damping coefficient
+g = 9.81       # gravity
+L = 1.0        # pendulum length
+A = 1.2        # amplitude of driving force
+omega = 1.5    # driving frequency
+omega_0 = np.sqrt(g / L)  # natural frequency
+
+# Time array
+t = np.linspace(0, 20, 1000)
+
+# Steady-state amplitude and phase
+denominator = np.sqrt((omega_0**2 - omega**2)**2 + (b * omega)**2)
+theta_amplitude = A / denominator
+delta = np.arctan2(b * omega, (omega_0**2 - omega**2))
+
+# Solution
+theta = theta_amplitude * np.cos(omega * t - delta)
+
+# Plotting
+plt.figure(figsize=(10, 5))
+plt.plot(t, theta, label='Angular Displacement θ(t)', color='blue')
+plt.title("Forced Damped Pendulum - Steady-State Oscillation")
+plt.xlabel("Time (s)")
+plt.ylabel("Angular Displacement (rad)")
+plt.grid(True)
+plt.legend()
+
+# Add explanation below plot
+explanation = (
+    "The graph demonstrates how the pendulum reaches a sinusoidal oscillation\n"
+    "with constant amplitude and phase relative to the driving force.\n"
+    "This is the steady-state response of a forced damped pendulum."
+)
+
+# Display explanation as annotation (outside plot area)
+plt.figtext(0.5, -0.2, explanation, wrap=True, horizontalalignment='center', fontsize=10)
+
+plt.tight_layout()
+plt.show()
