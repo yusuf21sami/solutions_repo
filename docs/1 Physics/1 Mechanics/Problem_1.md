@@ -58,9 +58,51 @@ As the angle \( \theta \) changes, the range of the projectile also changes. The
 
 Thus, the range is a function of the launch angle \( \theta \), initial velocity \( v_0 \), and gravity \( g \). Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Stil ve yazı tipi ayarları
+plt.style.use('seaborn-vibrant')
+plt.rcParams.update({
+    "font.size": 12,
+    "figure.figsize": (8, 5),
+    "axes.titlesize": 14,
+    "axes.labelsize": 12,
+    "legend.fontsize": 10,
+    "xtick.labelsize": 10,
+    "ytick.labelsize": 10,
+    "axes.grid": True,
+    "font.family": "DejaVu Sans"  # Türkçe karakter desteği için
+})
+
+# Fiziksel sabitler
+v0 = 20  # Başlangıç hızı (m/s)
+g = 9.81  # Yerçekimi ivmesi (m/s^2)
+
+# Açı değerleri (derece)
+acilar = np.linspace(0, 90, 500)
+acilar_radyan = np.radians(acilar)
+
+# Menzil hesaplama
+menzil = (v0 ** 2 * np.sin(2 * acilar_radyan)) / g
+
+# Grafik çizimi
+plt.figure()
+plt.plot(acilar, menzil, color='blue', label='Menzil vs Açı')
+plt.axvline(45, color='red', linestyle='--', label='Maksimum Menzil Açısı (45°)')
+
+plt.title("Açıya Göre Menzil")
+plt.xlabel("Atış Açısı (°)")
+plt.ylabel("Menzil (m)")
+plt.legend()
+plt.tight_layout()
+
+# Grafik hem gösterilir hem .png olarak kaydedilir
+plt.savefig("aciya_gore_menzil.png", dpi=300, bbox_inches='tight')  # Web sitenizde kullanmak için
+plt.show()
+
+
 <img src="aciya_gore_menzil.png" alt="Açıya Göre Menzil Grafiği" width="600">
-
-
 
 
 ## Analysis of the Range:
