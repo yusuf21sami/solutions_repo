@@ -216,7 +216,29 @@
 <h3 id="variations-with-initial-conditions">Variations with Initial Conditions</h3>
 <p>As the angle <span class="arithmatex">\( \theta \)</span> changes, the range of the projectile also changes. The sine function <span class="arithmatex">\( \sin(2\theta) \)</span> shows how the range is maximized at an angle of <span class="arithmatex">\( 45^\circ \)</span>, where the value of <span class="arithmatex">\( \sin(2\theta) \)</span> is 1.</p>
 <p>Thus, the range is a function of the launch angle <span class="arithmatex">\( \theta \)</span>, initial velocity <span class="arithmatex">\( v_0 \)</span>, and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
-<p><img alt="alt text" src="../image-1.png"/> </p>
+<p>import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="sabitler">Sabitler</h1>
+<p>v0 = 20  # Başlangıç hızı (m/s)
+g = 9.81  # Yerçekimi ivmesi (m/s^2)</p>
+<h1 id="aclar-0-90-aras-derece-cinsinden">Açılar (0° - 90° arası, derece cinsinden)</h1>
+<p>angles_deg = np.linspace(0, 90, 500)
+angles_rad = np.radians(angles_deg)  # Radyana çevir</p>
+<h1 id="menzil-hesaplama">Menzil hesaplama</h1>
+<p>range_vals = (v0 ** 2 * np.sin(2 * angles_rad)) / g</p>
+<h1 id="grafik-cizimi">Grafik çizimi</h1>
+<p>plt.figure(figsize=(8, 5))
+plt.plot(angles_deg, range_vals, color='blue')
+plt.title("Açıya Göre Menzil")
+plt.xlabel("Atış Açısı (°)")
+plt.ylabel("Menzil (m)")
+plt.grid(True)
+plt.axvline(45, color='red', linestyle='--', label='Maksimum menzil (45°)')
+plt.legend()
+plt.tight_layout()
+plt.show()</p>
 <h2 id="analysis-of-the-range">Analysis of the Range:</h2>
 <h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
 <h2 id="analysis-of-the-range_1">Analysis of the Range</h2>
