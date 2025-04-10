@@ -59,17 +59,3 @@ We will later explore:
 > **Next Step:** In the following sections, we will numerically simulate this system and visualize the time-domain and frequency-domain characteristics using Python.
 
 ![alt text](image-2.png)
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Add explanation below the plot
-explanation = (
-    "The graph demonstrates how the pendulum reaches a sinusoidal oscillation\n"
-    "with constant amplitude and phase relative to the driving force.\n"
-    "This is the steady-state response of a forced damped pendulum."
-)
-fig.text(0.5, -0.15, explanation, wrap=True, ha='center', fontsize=10)
-
-plt.tight_layout()
-plt.show()
