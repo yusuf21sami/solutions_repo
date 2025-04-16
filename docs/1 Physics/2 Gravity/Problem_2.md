@@ -143,3 +143,123 @@ First Cosmic Velocity (blue): decreases with altitude — the orbital speed need
 Second Cosmic Velocity (red): also decreases with altitude — the speed needed to escape Earth's gravity.
 Third Cosmic Velocity (green dashed line): constant — the speed needed to escape the Solar System, starting from Earth's orbit.
 """
+
+
+In spaceflight mechanics, **cosmic velocities** define the minimum speeds required for different orbital and escape scenarios. These values depend on the mass and radius of the celestial body in question. Understanding them is critical for launching satellites, sending missions to other planets, and exploring beyond the Solar System.
+
+---
+
+## 🚀 Overview of Cosmic Velocities
+
+Cosmic velocities are classified into three main types:
+
+1. **First Cosmic Velocity** – orbital velocity for a stable low orbit.
+2. **Second Cosmic Velocity** – escape velocity to leave the planet's gravitational influence.
+3. **Third Cosmic Velocity** – escape velocity to leave the Solar System from Earth's orbit.
+
+---
+
+## 🔢 Mathematical Definitions
+
+### First Cosmic Velocity (Orbital Velocity)
+
+This is the velocity required to achieve a **stable circular orbit** just above the surface of a planet:
+
+$$
+v_1 = \sqrt{\frac{GM}{r}}
+$$
+
+- \( G \): Gravitational constant \( (6.674 \times 10^{-11} \, \text{m}^3\,\text{kg}^{-1}\,\text{s}^{-2}) \)
+- \( M \): Mass of the planet
+- \( r \): Radius from the center of the planet
+
+---
+
+### Second Cosmic Velocity (Escape Velocity)
+
+To escape a planet's gravitational pull entirely:
+
+$$
+v_2 = \sqrt{\frac{2GM}{r}}
+$$
+
+This is derived from energy conservation, where total mechanical energy equals zero.
+
+---
+
+### Third Cosmic Velocity (Interstellar Escape)
+
+The velocity required to escape the **Sun's gravity** starting from Earth’s orbit:
+
+$$
+v_3 = \sqrt{\frac{2GM_{\odot}}{r_{\text{Earth}}}} - v_{\text{orbital}}
+$$
+
+- \( M_{\odot} \): Mass of the Sun  
+- \( r_{\text{Earth}} \): Distance from the Sun to Earth (~1 AU)  
+- \( v_{\text{orbital}} \): Earth's orbital velocity around the Sun
+
+---
+
+## 🌍 Comparative Values for Different Planets
+
+### Constants and Planetary Data
+
+| Planet  | Mass (\( M \)) [kg]         | Radius (\( r \)) [m]         |
+|---------|-----------------------------|-------------------------------|
+| Earth   | \( 5.972 \times 10^{24} \)  | \( 6.371 \times 10^6 \)       |
+| Mars    | \( 6.417 \times 10^{23} \)  | \( 3.390 \times 10^6 \)       |
+| Jupiter | \( 1.898 \times 10^{27} \)  | \( 6.991 \times 10^7 \)       |
+
+Using the formulas above, we can compute the first and second cosmic velocities for each.
+
+(Note: Third cosmic velocity is based on Sun's mass and Earth’s orbit, so it doesn’t vary by planet.)
+
+---
+
+## 📈 (To Be Visualized)
+
+We will later visualize:
+
+- The first and second cosmic velocities for Earth, Mars, and Jupiter.
+- How these velocities change with altitude.
+- Comparison of planetary surface escape speeds.
+
+---
+
+## 🛰 Importance in Space Exploration
+
+Understanding these velocities is **fundamental** for mission planning:
+
+### ✅ Launching Satellites
+
+- Satellites require **first cosmic velocity** to stay in orbit.
+- Different orbits (LEO, MEO, GEO) require slight variations.
+
+### 🚀 Planetary Missions
+
+- Missions to Mars, Moon, or outer planets must first achieve **second cosmic velocity**.
+- After escaping Earth, they are inserted into **interplanetary transfer orbits**.
+
+### 🌌 Interstellar Travel
+
+- Missions like **Voyager 1** and **Voyager 2** required speeds near the **third cosmic velocity**.
+- These missions leverage gravity assists to gain the extra velocity needed to escape the Sun’s influence.
+
+---
+
+## ✅ Summary
+
+- **Cosmic velocities** are foundational for orbital mechanics and interplanetary mission design.
+- They depend on planetary **mass** and **radius**, and are higher for more massive bodies.
+- Mastery of these principles enables everything from **communication satellites** to **deep space probes**.
+
+---
+
+*Next: We will compute and visualize these velocities using real planetary data.*
+
+![alt text](image-6.png)
+
+"""
+Here’s a comparison of the first and second cosmic velocities for Earth, Mars, and Jupiter. You can clearly see how much more energy is needed to escape the gravitational pull of a massive planet like Jupiter compared to Mars or Earth.
+"""
