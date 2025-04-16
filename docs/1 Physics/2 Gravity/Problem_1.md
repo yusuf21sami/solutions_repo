@@ -390,3 +390,124 @@ Observations:
 - This visualization helps confirm the physical law: \( T^2 \propto r^3 \), where T is the period 
   and r is the orbital radius.
 """
+
+# Orbital Period and Orbital Radius
+
+## Introduction
+
+In celestial mechanics, understanding the relationship between **orbital period** and **orbital radius** is crucial to predicting and simulating planetary motion. This section explains the physics behind this relationship and presents a **computational model** to simulate circular orbits.
+
+---
+
+## Key Concepts
+
+- **Orbital Radius ($r$)**: The average distance from an orbiting body to the central mass.
+- **Orbital Period ($T$)**: The time it takes for the object to complete one orbit around the central mass.
+- **Circular Orbit Assumption**: For simplicity, we assume all orbits are perfectly circular.
+
+---
+
+## Newton's Law of Gravitation
+
+The gravitational force between two masses is:
+
+$$
+F = G \frac{Mm}{r^2}
+$$
+
+Where:
+
+- $F$ is the gravitational force,
+- $G$ is the gravitational constant,
+- $M$ is the mass of the central body,
+- $m$ is the mass of the orbiting object,
+- $r$ is the orbital radius.
+
+---
+
+## Orbital Velocity
+
+For circular motion, gravitational force provides the necessary centripetal force:
+
+$$
+\frac{mv^2}{r} = G \frac{Mm}{r^2}
+$$
+
+Solving for orbital velocity ($v$):
+
+$$
+v = \sqrt{\frac{GM}{r}}
+$$
+
+---
+
+## Orbital Period Derivation
+
+Orbital period is the time it takes to travel the circumference of the orbit at constant speed:
+
+$$
+T = \frac{2\pi r}{v}
+$$
+
+Substituting $v$:
+
+$$
+T = \frac{2\pi r}{\sqrt{\frac{GM}{r}}} = 2\pi \sqrt{\frac{r^3}{GM}}
+$$
+
+This confirms Kepler’s Third Law:
+
+$$
+T^2 \propto r^3
+$$
+
+---
+
+## Computational Simulation (Concept)
+
+We implement a simple computational model to verify the relationship between orbital radius and period.
+
+**Steps:**
+
+1. Choose a set of orbital radii (e.g., values from 0.3 AU to 10 AU).
+2. Assume a central mass (e.g., the Sun, $M = 1.989 \times 10^{30}$ kg).
+3. Compute the orbital period using:
+
+$$
+T = 2\pi \sqrt{\frac{r^3}{GM}}
+$$
+
+4. Convert units as needed (e.g., meters to AU, seconds to years).
+5. Compare results with known planetary data to verify the accuracy.
+
+---
+
+## Expected Output
+
+The simulation should produce a curve (in a future graph) showing that:
+
+- The relationship between $r$ and $T$ is not linear.
+- A log-log plot of $T$ vs. $r$ should produce a straight line with a slope of $1.5$, confirming:
+
+$$
+\log(T) = \frac{3}{2} \log(r) + \text{constant}
+$$
+
+---
+
+## Conclusion
+
+By implementing a computational model using the gravitational and motion equations, we can **numerically confirm** the proportional relationship between orbital radius and period, validating **Kepler’s Third Law** with real or simulated data.
+
+---
+
+*Next: We will visualize this model using graphs to reinforce the relationship.*
+
+![alt text](image-4.png)
+
+"""
+On the left side, the nonlinear relationship between orbital radius and orbital period is shown.
+
+On the right side, the log-log plot clearly confirms that this relationship follows a power law —
+specifically, T ∝ r^1.5. The slope is approximately 1.5, as expected from Kepler’s Third Law.
+"""
