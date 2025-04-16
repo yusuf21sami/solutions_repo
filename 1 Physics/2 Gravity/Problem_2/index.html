@@ -172,6 +172,135 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</h1>
+<p>Understanding escape and cosmic velocities is essential in orbital mechanics and spaceflight dynamics. These velocities represent the minimum speeds required for different types of motion in a gravitational field.</p>
+<hr/>
+<h2 id="what-are-cosmic-velocities">What Are Cosmic Velocities?</h2>
+<p>Cosmic velocities are defined based on the gravitational influence of a planetary body, such as Earth. They are theoretical thresholds that determine different outcomes for an object launched from a planet's surface.</p>
+<hr/>
+<h2 id="1-first-cosmic-velocity-orbital-velocity">1️ First Cosmic Velocity (Orbital Velocity)</h2>
+<p><strong>Definition</strong>:<br/>
+The first cosmic velocity is the minimum horizontal speed an object must have to enter a stable <strong>circular orbit</strong> close to the surface of a planet, without additional propulsion.</p>
+<h3 id="derivation">Derivation:</h3>
+<p>To stay in orbit, the gravitational force must equal the centripetal force:</p>
+<div class="arithmatex">\[
+\frac{mv^2}{r} = G \frac{Mm}{r^2}
+\]</div>
+<p>Solving for <span class="arithmatex">\( v \)</span>:</p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{GM}{r}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( v_1 \)</span> = first cosmic velocity (orbital velocity)</li>
+<li><span class="arithmatex">\( G \)</span> = gravitational constant (<span class="arithmatex">\(6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}\)</span>)</li>
+<li><span class="arithmatex">\( M \)</span> = mass of the Earth (or central body)</li>
+<li><span class="arithmatex">\( r \)</span> = radius from the center of the Earth</li>
+</ul>
+<h3 id="physical-meaning">Physical Meaning:</h3>
+<ul>
+<li>This velocity allows satellites to <strong>orbit</strong> the Earth in a circular trajectory.</li>
+<li>For Earth:<br/>
+  $$ v_1 \approx 7.9 \, \text{km/s} $$</li>
+</ul>
+<hr/>
+<h2 id="2-second-cosmic-velocity-escape-velocity">2️ Second Cosmic Velocity (Escape Velocity)</h2>
+<p><strong>Definition</strong>:<br/>
+The second cosmic velocity is the minimum speed an object must reach to <strong>completely escape</strong> a planet's gravitational field, assuming no further propulsion and neglecting air resistance.</p>
+<h3 id="derivation_1">Derivation:</h3>
+<p>From conservation of energy:</p>
+<div class="arithmatex">\[
+\frac{1}{2}mv^2 = G \frac{Mm}{r}
+\]</div>
+<p>Solving for <span class="arithmatex">\( v \)</span>:</p>
+<div class="arithmatex">\[
+v_2 = \sqrt{\frac{2GM}{r}}
+\]</div>
+<h3 id="relation-to-first-cosmic-velocity">Relation to First Cosmic Velocity:</h3>
+<div class="arithmatex">\[
+v_2 = \sqrt{2} \cdot v_1
+\]</div>
+<h3 id="physical-meaning_1">Physical Meaning:</h3>
+<ul>
+<li>Reaching this speed means the object will <strong>escape</strong> Earth’s gravity and move into <strong>interplanetary space</strong>.</li>
+<li>For Earth:<br/>
+  $$ v_2 \approx 11.2 \, \text{km/s} $$</li>
+</ul>
+<hr/>
+<h2 id="3-third-cosmic-velocity-interstellar-escape-velocity">3️ Third Cosmic Velocity (Interstellar Escape Velocity)</h2>
+<p><strong>Definition</strong>:<br/>
+The third cosmic velocity is the minimum speed required to <strong>escape the Sun's gravitational field</strong>, starting from Earth’s orbit.</p>
+<p>This is the velocity needed to <strong>leave the Solar System</strong>.</p>
+<h3 id="derivation_2">Derivation:</h3>
+<p>The object must escape both Earth’s gravity and the Sun’s gravity. The formula typically used assumes the object has already escaped Earth and is now influenced mainly by the Sun:</p>
+<div class="arithmatex">\[
+v_3 = \sqrt{2GM_\odot \left( \frac{1}{r_\text{Earth}} \right)}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( M_\odot \)</span> = mass of the Sun</li>
+<li><span class="arithmatex">\( r_\text{Earth} \)</span> = distance from the Sun to Earth (<span class="arithmatex">\( \approx 1 \, \text{AU} \)</span>)</li>
+</ul>
+<p>More accurately, you subtract the Earth's orbital velocity from the total velocity required:</p>
+<div class="arithmatex">\[
+v_3 = \sqrt{2GM_\odot / r} - v_\text{Earth-orbit}
+\]</div>
+<h3 id="physical-meaning_2">Physical Meaning:</h3>
+<ul>
+<li>This is the speed needed to leave the <strong>Solar System</strong>, e.g., like Voyager 1.</li>
+<li>From Earth’s orbit:<br/>
+  $$ v_3 \approx 16.7 \, \text{km/s} $$</li>
+</ul>
+<hr/>
+<h2 id="parameter-analysis">Parameter Analysis</h2>
+<p>Each cosmic velocity depends on key physical parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Velocity</th>
+<th>Depends on</th>
+<th>Formula</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\( v_1 \)</span></td>
+<td><span class="arithmatex">\( G, M, r \)</span></td>
+<td><span class="arithmatex">\( \sqrt{\frac{GM}{r}} \)</span></td>
+<td>Increases with central mass, decreases with orbital radius</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\( v_2 \)</span></td>
+<td><span class="arithmatex">\( G, M, r \)</span></td>
+<td><span class="arithmatex">\( \sqrt{\frac{2GM}{r}} \)</span></td>
+<td>Similar dependencies, but requires more energy than <span class="arithmatex">\( v_1 \)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\( v_3 \)</span></td>
+<td><span class="arithmatex">\( G, M_\odot, r \)</span></td>
+<td><span class="arithmatex">\( \sqrt{\frac{2GM_\odot}{r}} - v_{\text{Earth}} \)</span></td>
+<td>Adds solar parameters, combines planetary and heliocentric escape</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>First cosmic velocity</strong>: Orbit around a planet  </li>
+<li><strong>Second cosmic velocity</strong>: Escape from planet  </li>
+<li><strong>Third cosmic velocity</strong>: Escape from Solar System  </li>
+<li>All are derived from Newtonian gravity and energy conservation.</li>
+<li>The higher the gravitational pull or the closer you are to the mass center, the <strong>greater</strong> the required velocity.</li>
+</ul>
+<hr/>
+<p><em>Next: We will visualize these velocities using comparative plots and explore real-world mission data (e.g., Apollo, Voyager, Parker Solar Probe).</em></p>
+<p><img alt="alt text" src="../image-5.png"/></p>
+<p>"""
+First Cosmic Velocity (blue): decreases with altitude — the orbital speed needed for low Earth orbit
+Second Cosmic Velocity (red): also decreases with altitude — the speed needed to escape Earth's gravity.
+Third Cosmic Velocity (green dashed line): constant — the speed needed to escape the Solar System, starting from Earth's orbit.
+"""</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
