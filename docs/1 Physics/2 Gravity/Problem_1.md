@@ -250,3 +250,143 @@ $$
 
 # This principle is fundamental in astronomy and astrophysics, enabling scientists to calculate
 # planetary distances, infer stellar masses, and model orbital dynamics in planetary systems.
+
+# Orbital Period and Orbital Radius
+
+## Introduction
+
+In celestial mechanics, understanding the **orbital period** and **orbital radius** of an object is crucial to describing its motion around a central body. These concepts are governed primarily by **Newton's Law of Universal Gravitation** and **Kepler's Laws of Planetary Motion**.
+
+---
+
+## Definitions
+
+- **Orbital Radius ($r$)**: The average distance from the orbiting object to the center of the mass it orbits.
+- **Orbital Period ($T$)**: The time it takes for an object to complete one full orbit around the central body.
+
+---
+
+## Newton's Law of Universal Gravitation
+
+Newton stated that every mass attracts every other mass with a force given by:
+
+$$
+F = G \frac{Mm}{r^2}
+$$
+
+Where:
+
+- $F$ is the gravitational force,
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$),
+- $M$ is the mass of the central body,
+- $m$ is the mass of the orbiting body,
+- $r$ is the distance between the centers of the two masses.
+
+---
+
+## Centripetal Force and Circular Orbit
+
+For an object to remain in a circular orbit, the gravitational force must equal the required centripetal force:
+
+$$
+F = \frac{mv^2}{r}
+$$
+
+Equating with gravitational force:
+
+$$
+\frac{mv^2}{r} = G \frac{Mm}{r^2}
+$$
+
+Solving for orbital velocity ($v$):
+
+$$
+v = \sqrt{\frac{GM}{r}}
+$$
+
+---
+
+## Derivation of Orbital Period
+
+Orbital period can be found using the relationship:
+
+$$
+T = \frac{2\pi r}{v}
+$$
+
+Substituting $v$:
+
+$$
+T = \frac{2\pi r}{\sqrt{\frac{GM}{r}}} = 2\pi \sqrt{\frac{r^3}{GM}}
+$$
+
+This is consistent with **Kepler’s Third Law**, which states:
+
+$$
+T^2 \propto r^3
+$$
+
+---
+
+## Real-World Examples
+
+### 1. **The Moon’s Orbit Around Earth**
+
+- Orbital radius ($r$): approximately $3.84 \times 10^8$ m  
+- Mass of Earth ($M$): $5.972 \times 10^{24}$ kg
+
+Using:
+
+$$
+T = 2\pi \sqrt{\frac{r^3}{GM}}
+$$
+
+We can calculate the Moon’s orbital period (about **27.3 days**, which matches observations).
+
+---
+
+### 2. **Planetary Orbits in the Solar System**
+
+Let’s compare Earth and Mars:
+
+| Planet | Orbital Radius (AU) | Orbital Period (Earth Years) |
+|--------|----------------------|-------------------------------|
+| Earth  | 1                    | 1                             |
+| Mars   | 1.52                 | ~1.88                         |
+
+This data supports:
+
+$$
+\left( \frac{T_1}{T_2} \right)^2 = \left( \frac{r_1}{r_2} \right)^3
+$$
+
+---
+
+## Conclusion
+
+The orbital period and radius are intrinsically linked through fundamental laws of physics. These relationships not only help us predict celestial motions but also validate Newtonian mechanics and Kepler’s observational laws.
+
+---
+
+*Next: We'll include visualizations and graphs to illustrate these concepts in action.*
+
+![alt text](image-2.png)
+
+# Graph Description:
+
+"""
+This graph shows the relationship between the orbital radius (in Astronomical Units - AU)
+and the orbital period (in Earth years) for six planets in the Solar System: 
+Mercury, Venus, Earth, Mars, Jupiter, and Saturn.
+
+X-axis: Average distance from the Sun (AU)
+Y-axis: Time taken to complete one full orbit around the Sun (in Earth years)
+
+Observations:
+- Each data point is labeled with the corresponding planet name, positioned slightly above the point.
+- The trend follows Kepler’s Third Law: as the orbital radius increases, the orbital period also increases.
+- The relationship is non-linear, meaning that planets farther from the Sun take disproportionately longer 
+  to complete an orbit.
+- This visualization helps confirm the physical law: \( T^2 \propto r^3 \), where T is the period 
+  and r is the orbital radius.
+"""
