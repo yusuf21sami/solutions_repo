@@ -301,6 +301,115 @@ First Cosmic Velocity (blue): decreases with altitude — the orbital speed need
 Second Cosmic Velocity (red): also decreases with altitude — the speed needed to escape Earth's gravity.
 Third Cosmic Velocity (green dashed line): constant — the speed needed to escape the Solar System, starting from Earth's orbit.
 """</p>
+<p>In spaceflight mechanics, <strong>cosmic velocities</strong> define the minimum speeds required for different orbital and escape scenarios. These values depend on the mass and radius of the celestial body in question. Understanding them is critical for launching satellites, sending missions to other planets, and exploring beyond the Solar System.</p>
+<hr/>
+<h2 id="overview-of-cosmic-velocities">🚀 Overview of Cosmic Velocities</h2>
+<p>Cosmic velocities are classified into three main types:</p>
+<ol>
+<li><strong>First Cosmic Velocity</strong> – orbital velocity for a stable low orbit.</li>
+<li><strong>Second Cosmic Velocity</strong> – escape velocity to leave the planet's gravitational influence.</li>
+<li><strong>Third Cosmic Velocity</strong> – escape velocity to leave the Solar System from Earth's orbit.</li>
+</ol>
+<hr/>
+<h2 id="mathematical-definitions">🔢 Mathematical Definitions</h2>
+<h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity)</h3>
+<p>This is the velocity required to achieve a <strong>stable circular orbit</strong> just above the surface of a planet:</p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{GM}{r}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\( G \)</span>: Gravitational constant <span class="arithmatex">\( (6.674 \times 10^{-11} \, \text{m}^3\,\text{kg}^{-1}\,\text{s}^{-2}) \)</span></li>
+<li><span class="arithmatex">\( M \)</span>: Mass of the planet</li>
+<li><span class="arithmatex">\( r \)</span>: Radius from the center of the planet</li>
+</ul>
+<hr/>
+<h3 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity)</h3>
+<p>To escape a planet's gravitational pull entirely:</p>
+<div class="arithmatex">\[
+v_2 = \sqrt{\frac{2GM}{r}}
+\]</div>
+<p>This is derived from energy conservation, where total mechanical energy equals zero.</p>
+<hr/>
+<h3 id="third-cosmic-velocity-interstellar-escape">Third Cosmic Velocity (Interstellar Escape)</h3>
+<p>The velocity required to escape the <strong>Sun's gravity</strong> starting from Earth’s orbit:</p>
+<div class="arithmatex">\[
+v_3 = \sqrt{\frac{2GM_{\odot}}{r_{\text{Earth}}}} - v_{\text{orbital}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\( M_{\odot} \)</span>: Mass of the Sun  </li>
+<li><span class="arithmatex">\( r_{\text{Earth}} \)</span>: Distance from the Sun to Earth (~1 AU)  </li>
+<li><span class="arithmatex">\( v_{\text{orbital}} \)</span>: Earth's orbital velocity around the Sun</li>
+</ul>
+<hr/>
+<h2 id="comparative-values-for-different-planets">🌍 Comparative Values for Different Planets</h2>
+<h3 id="constants-and-planetary-data">Constants and Planetary Data</h3>
+<table>
+<thead>
+<tr>
+<th>Planet</th>
+<th>Mass (<span class="arithmatex">\( M \)</span>) [kg]</th>
+<th>Radius (<span class="arithmatex">\( r \)</span>) [m]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td><span class="arithmatex">\( 5.972 \times 10^{24} \)</span></td>
+<td><span class="arithmatex">\( 6.371 \times 10^6 \)</span></td>
+</tr>
+<tr>
+<td>Mars</td>
+<td><span class="arithmatex">\( 6.417 \times 10^{23} \)</span></td>
+<td><span class="arithmatex">\( 3.390 \times 10^6 \)</span></td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td><span class="arithmatex">\( 1.898 \times 10^{27} \)</span></td>
+<td><span class="arithmatex">\( 6.991 \times 10^7 \)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Using the formulas above, we can compute the first and second cosmic velocities for each.</p>
+<p>(Note: Third cosmic velocity is based on Sun's mass and Earth’s orbit, so it doesn’t vary by planet.)</p>
+<hr/>
+<h2 id="to-be-visualized">📈 (To Be Visualized)</h2>
+<p>We will later visualize:</p>
+<ul>
+<li>The first and second cosmic velocities for Earth, Mars, and Jupiter.</li>
+<li>How these velocities change with altitude.</li>
+<li>Comparison of planetary surface escape speeds.</li>
+</ul>
+<hr/>
+<h2 id="importance-in-space-exploration">🛰 Importance in Space Exploration</h2>
+<p>Understanding these velocities is <strong>fundamental</strong> for mission planning:</p>
+<h3 id="launching-satellites">✅ Launching Satellites</h3>
+<ul>
+<li>Satellites require <strong>first cosmic velocity</strong> to stay in orbit.</li>
+<li>Different orbits (LEO, MEO, GEO) require slight variations.</li>
+</ul>
+<h3 id="planetary-missions">🚀 Planetary Missions</h3>
+<ul>
+<li>Missions to Mars, Moon, or outer planets must first achieve <strong>second cosmic velocity</strong>.</li>
+<li>After escaping Earth, they are inserted into <strong>interplanetary transfer orbits</strong>.</li>
+</ul>
+<h3 id="interstellar-travel">🌌 Interstellar Travel</h3>
+<ul>
+<li>Missions like <strong>Voyager 1</strong> and <strong>Voyager 2</strong> required speeds near the <strong>third cosmic velocity</strong>.</li>
+<li>These missions leverage gravity assists to gain the extra velocity needed to escape the Sun’s influence.</li>
+</ul>
+<hr/>
+<h2 id="summary_1">✅ Summary</h2>
+<ul>
+<li><strong>Cosmic velocities</strong> are foundational for orbital mechanics and interplanetary mission design.</li>
+<li>They depend on planetary <strong>mass</strong> and <strong>radius</strong>, and are higher for more massive bodies.</li>
+<li>Mastery of these principles enables everything from <strong>communication satellites</strong> to <strong>deep space probes</strong>.</li>
+</ul>
+<hr/>
+<p><em>Next: We will compute and visualize these velocities using real planetary data.</em></p>
+<p><img alt="alt text" src="../image-6.png"/></p>
+<p>"""
+Here’s a comparison of the first and second cosmic velocities for Earth, Mars, and Jupiter. You can clearly see how much more energy is needed to escape the gravitational pull of a massive planet like Jupiter compared to Mars or Earth.
+"""</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
