@@ -115,7 +115,7 @@ In summary:
 
 ![alt text](image.png) 
 
-
+![alt text](image-6.png)
 
 ## Practical Applications
 
