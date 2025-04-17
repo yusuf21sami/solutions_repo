@@ -89,19 +89,19 @@ Where:
 - $$\omega$$ is the driving frequency,
 - $$t$$ is time.
 
-#### Damping Coefficient ($$\gamma$$)
+#### Damping Coefficient ($\gamma$)
 - Controls how quickly the system loses energy.
 - Higher values of $$\gamma$$ result in faster dissipation of motion, suppressing oscillations over time.
-- When $$\gamma = 0$$, the system is undamped.
+- When $\gamma = 0$, the system is undamped.
 
-#### Driving Amplitude ($$A$$)
+#### Driving Amplitude ($A$)
 - Represents the magnitude of the external periodic force.
 - A larger $$A$$ increases the energy input into the system, potentially causing more complex motion.
 
-#### Driving Frequency ($$\omega$$)
+#### Driving Frequency ($\omega$)
 - Determines how often the external force is applied per unit time.
-- When $$\omega$$ is close to the system's natural frequency $$\omega_0$$, resonance can occur, significantly amplifying oscillations.
-- Mismatched $$\omega$$ and $$\omega_0$$ lead to beat patterns or chaotic behavior, depending on the system's parameters.
+- When $\omega$ is close to the system's natural frequency $$\omega_0$$, resonance can occur, significantly amplifying oscillations.
+- Mismatched $\omega$ and $\omega_0$ lead to beat patterns or chaotic behavior, depending on the system's parameters.
 
 ---
 
