@@ -87,7 +87,7 @@ Where:
 - $$\omega_0$$ is the natural frequency of the pendulum,
 - $$A$$ is the driving amplitude,
 - $$\omega$$ is the driving frequency,
-- $$t$$ is time.
+- $t$ is time.
 
 #### Damping Coefficient ($\gamma$)
 - Controls how quickly the system loses energy.
