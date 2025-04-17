@@ -147,48 +147,6 @@ This behavior is typical of nonlinear dynamical systems, where small changes in 
 
 """
 
-## 1. Introduction
-
-The forced damped pendulum is a classical example in the study of nonlinear dynamical systems. It models a pendulum subjected to both damping forces (e.g., friction or air resistance) and external periodic forcing. The equation governing its motion is a second-order nonlinear differential equation and exhibits rich behavior, including chaotic dynamics.
-
-## 2. Mathematical Model
-
-The general equation of motion for a forced damped pendulum is given by:
-
-$$
-\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
-$$
-
-Where:
-- \( \theta \) is the angular displacement,
-- \( \gamma \) is the damping coefficient,
-- \( \omega_0 \) is the natural frequency of the pendulum,
-- \( A \) is the amplitude of the driving force,
-- \( \omega \) is the frequency of the driving force.
-
-This equation does not have a general analytical solution and is typically studied using numerical methods.
-
-## 3. Practical Applications
-
-- **Energy Harvesting Devices**: Mechanical energy from environmental vibrations can be converted into electrical energy using oscillatory systems modeled by forced damped pendulums.
-- **Suspension Bridges**: Wind-induced oscillations in bridges (e.g., Tacoma Narrows Bridge) can be studied using this model to understand resonance and damping mechanisms.
-- **Oscillating Circuits**: Electrical RLC circuits with alternating current sources exhibit behaviors analogous to the forced damped pendulum, where charge and current correspond to angular displacement and velocity.
-
-## 4. Implementation
-
-> **Note**: The graphical simulation of the system will be added in the next section. This can include:
-> - Phase space plots
-> - Time series of angular displacement
-> - Poincaré sections for chaos analysis
-
-## 5. Future Work
-
-- Include bifurcation diagrams to analyze transitions to chaos.
-- Explore parameter spaces to map out stable vs chaotic regions.
-- Implement control methods to stabilize desired periodic orbits.
-
----
-
 
 ![alt text](image-4.png)
 
