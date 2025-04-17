@@ -61,7 +61,7 @@ Thus, the range is a function of the launch angle  $$ \theta $$ , initial veloci
 
 ![alt text](image-1.png)
 
-
+![alt text](image-7.png)
 ## Analysis of the Range:
 
 # Investigating the Range as a Function of the Angle of Projection
