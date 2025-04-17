@@ -168,9 +168,6 @@ description = """
 </div>
 """
 
-display(HTML(description))
-
-
 
 ## 1. Introduction
 
