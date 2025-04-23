@@ -51,6 +51,20 @@ $$
 - **Initial Velocity \( v_0 \)**: Since the range is proportional to \( v_0^2 \), small changes in initial speed have a significant effect on the distance traveled.
 - **Gravitational Acceleration \( g \)**: An increase in \( g \) results in a decrease in range, demonstrating an inverse relationship.
 
+![alt text](image-9.png)
+
+"""
+This plot compares two trajectories of projectile motion: one without air resistance (blue dashed line)
+and one with air resistance (orange line).
+
+- The trajectory without air resistance follows a symmetric parabolic path, reaching greater height and range.
+- The trajectory with air resistance shows reduced maximum height and significantly shorter horizontal range,
+  due to the decelerating effect of drag forces.
+
+This visualization highlights the crucial impact of air resistance on projectile dynamics,
+making the model more applicable to real-world scenarios.
+"""
+
 ## 3. Practical Applications
 
 The idealized model can be modified to accommodate real-world complexities, such as:
