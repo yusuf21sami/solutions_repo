@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Projectile Motion: A Detailed Theoretical and Computational Study - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Projectile Motion: A Detailed Theoretical and Computational Study";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,8 +46,24 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Projectile Motion: A Detailed Theoretical and Computational Study</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-analysis-of-the-range">2. Analysis of the Range</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-dependence">Parameter Dependence:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#pseudocode-outline">Pseudocode Outline:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -163,7 +179,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Projectile Motion: A Detailed Theoretical and Computational Study</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,118 +187,80 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
-<h2 id="theoretical-foundation">Theoretical Foundation</h2>
-<p>We begin by considering the motion of a projectile under the influence of gravity. The motion in both the horizontal and vertical directions can be described using the following equations:</p>
-<h3 id="equations-of-motion">Equations of Motion</h3>
-<p>For a projectile launched with an initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> to the horizontal, we can break the velocity into horizontal and vertical components:</p>
+<h1 id="projectile-motion-a-detailed-theoretical-and-computational-study">Projectile Motion: A Detailed Theoretical and Computational Study</h1>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<p>Projectile motion can be understood through Newtonian mechanics by analyzing the forces acting on a particle in two-dimensional space. Assuming no air resistance and a constant gravitational field, the motion can be described by the following set of differential equations:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{d^2x}{dt^2} &amp;= 0 \\
+\frac{d^2y}{dt^2} &amp;= -g
+\end{aligned}
+\]</div>
+<p>where:
+- <span class="arithmatex">\( x(t) \)</span> and <span class="arithmatex">\( y(t) \)</span> are the horizontal and vertical positions of the projectile as functions of time,
+- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity.</p>
+<p>Integrating these equations with respect to time yields the general solutions:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x(t) &amp;= v_0 \cos(\theta) \cdot t \\
+y(t) &amp;= v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+\end{aligned}
+\]</div>
+<p>Here:
+- <span class="arithmatex">\( v_0 \)</span> is the initial velocity,
+- <span class="arithmatex">\( \theta \)</span> is the angle of projection with respect to the horizontal.</p>
+<p>The family of solutions arises from different values of initial conditions <span class="arithmatex">\( v_0 \)</span>, <span class="arithmatex">\( \theta \)</span>, and initial position. These variations determine the shape and range of each individual trajectory.</p>
+<h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
+<p>The <strong>range</strong> <span class="arithmatex">\( R \)</span> of a projectile is the horizontal distance it travels before returning to the same vertical level. Setting <span class="arithmatex">\( y(t) = 0 \)</span> and solving for <span class="arithmatex">\( t \)</span>, we find the time of flight:</p>
+<div class="arithmatex">\[
+t_{\text{flight}} = \frac{2 v_0 \sin(\theta)}{g}
+\]</div>
+<p>Substituting this into <span class="arithmatex">\( x(t) \)</span>, we get:</p>
+<div class="arithmatex">\[
+R = \frac{v_0^2 \sin(2\theta)}{g}
+\]</div>
+<h3 id="parameter-dependence">Parameter Dependence:</h3>
 <ul>
-<li>
-<p>Horizontal velocity component: 
-  $$ v_{0x} = v_0 \cos(\theta) $$</p>
-</li>
-<li>
-<p>Vertical velocity component: 
-  $$ v_{0y} = v_0 \sin(\theta) $$</p>
-</li>
+<li><strong>Angle of Projection <span class="arithmatex">\( \theta \)</span></strong>: The range is maximized when <span class="arithmatex">\( \theta = 45^\circ \)</span>, since <span class="arithmatex">\( \sin(2\theta) \)</span> reaches its maximum value of 1 at this angle.</li>
+<li><strong>Initial Velocity <span class="arithmatex">\( v_0 \)</span></strong>: Since the range is proportional to <span class="arithmatex">\( v_0^2 \)</span>, small changes in initial speed have a significant effect on the distance traveled.</li>
+<li><strong>Gravitational Acceleration <span class="arithmatex">\( g \)</span></strong>: An increase in <span class="arithmatex">\( g \)</span> results in a decrease in range, demonstrating an inverse relationship.</li>
 </ul>
-<p>The equations of motion in the horizontal (<span class="arithmatex">\(x\)</span>) and vertical (<span class="arithmatex">\(y\)</span>) directions are given by:</p>
-<ol>
-<li>
-<p>Horizontal motion:
-   $$ x(t) = v_{0x} t = v_0 \cos(\theta) t $$</p>
-</li>
-<li>
-<p>Vertical motion:
-   $$ y(t) = v_{0y} t - \frac{1}{2} g t^2 = v_0 \sin(\theta) t - \frac{1}{2} g t^2 $$</p>
-</li>
-</ol>
-<p>Where:
-- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity
-- <span class="arithmatex">\( t \)</span> is the time of flight</p>
-<h3 id="time-of-flight">Time of Flight</h3>
-<p>To find the time of flight <span class="arithmatex">\( T \)</span>, we set the vertical displacement <span class="arithmatex">\( y(t) \)</span> equal to zero when the projectile lands:</p>
-<div class="arithmatex">\[ 0 = v_0 \sin(\theta) T - \frac{1}{2} g T^2 \]</div>
-<p>Solving for <span class="arithmatex">\( T \)</span>, we get:</p>
-<div class="arithmatex">\[ T = \frac{2 v_0 \sin(\theta)}{g} \]</div>
-<h3 id="range-of-the-projectile">Range of the Projectile</h3>
-<p>The range <span class="arithmatex">\( R \)</span> is the horizontal distance the projectile travels before landing. Using the time of flight <span class="arithmatex">\( T \)</span>, the range can be determined from the horizontal motion equation:</p>
-<div class="arithmatex">\[ R = x(T) = v_0 \cos(\theta) T \]</div>
-<p>Substituting the expression for <span class="arithmatex">\( T \)</span>:</p>
-<div class="arithmatex">\[ R = v_0 \cos(\theta) \cdot \frac{2 v_0 \sin(\theta)}{g} \]</div>
-<p>Simplifying the expression for the range:</p>
-<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
-<h3 id="variations-with-initial-conditions">Variations with Initial Conditions</h3>
-<p>As the angle <span class="arithmatex">\( \theta \)</span> changes, the range of the projectile also changes. The sine function <span class="arithmatex">\( \sin(2\theta) \)</span> shows how the range is maximized at an angle of <span class="arithmatex">\( 45^\circ \)</span>, where the value of <span class="arithmatex">\( \sin(2\theta) \)</span> is 1.</p>
-<p>Thus, the range is a function of the launch angle  $$ \theta $$ , initial velocity $$  v_0 $$ , and gravity <span class="arithmatex">\( g \)</span>. Variations in any of these initial conditions lead to a family of solutions for the range, allowing us to analyze how changes in conditions affect projectile motion.</p>
-<p><img alt="alt text" src="../image-1.png"/></p>
-<p><img alt="alt text" src="../image-7.png"/></p>
-<h2 id="analysis-of-the-range">Analysis of the Range:</h2>
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h1>
-<h2 id="analysis-of-the-range_1">Analysis of the Range</h2>
-<h3 id="dependence-of-range-on-the-angle-of-projection">Dependence of Range on the Angle of Projection</h3>
-<p>From the previous derivation, we know the range <span class="arithmatex">\( R \)</span> of the projectile is given by the equation:</p>
-<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
-<p>Where:
-- <span class="arithmatex">\( v_0 \)</span> is the initial velocity
-- <span class="arithmatex">\( \theta \)</span> is the angle of projection
-- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity</p>
-<p>We can analyze the behavior of the range as a function of the angle of projection <span class="arithmatex">\( \theta \)</span>.</p>
-<p>The term <span class="arithmatex">\( \sin(2\theta) \)</span> in the range equation indicates that the range varies as a sinusoidal function of <span class="arithmatex">\( 2\theta \)</span>. The sine function reaches its maximum value of 1 when <span class="arithmatex">\( 2\theta = 90^\circ \)</span>, i.e., when <span class="arithmatex">\( \theta = 45^\circ \)</span>. Therefore, the maximum horizontal range is achieved when the angle of projection is <span class="arithmatex">\( 45^\circ \)</span>.</p>
-<p>The relationship between the range and the angle of projection is symmetric. For angles greater than <span class="arithmatex">\( 45^\circ \)</span>, the range decreases as the sine function decreases after reaching its maximum. For angles less than <span class="arithmatex">\( 45^\circ \)</span>, the range also decreases as the angle moves further away from <span class="arithmatex">\( 45^\circ \)</span>.</p>
-<p>Thus, the range is maximized when <span class="arithmatex">\( \theta = 45^\circ \)</span>, and for other angles, the range decreases symmetrically on either side of this optimal angle.</p>
-<h3 id="influence-of-initial-velocity">Influence of Initial Velocity</h3>
-<p>The range <span class="arithmatex">\( R \)</span> is directly proportional to the square of the initial velocity <span class="arithmatex">\( v_0 \)</span>:</p>
-<div class="arithmatex">\[ R \propto v_0^2 \]</div>
-<p>This means that if the initial velocity <span class="arithmatex">\( v_0 \)</span> is increased, the range of the projectile increases as well. For example, doubling the initial velocity would quadruple the range, assuming the angle of projection and gravitational acceleration remain constant.</p>
-<h3 id="influence-of-gravitational-acceleration">Influence of Gravitational Acceleration</h3>
-<p>The range <span class="arithmatex">\( R \)</span> is inversely proportional to the acceleration due to gravity <span class="arithmatex">\( g \)</span>:</p>
-<div class="arithmatex">\[ R \propto \frac{1}{g} \]</div>
-<p>This means that in regions with lower gravitational acceleration (e.g., on the Moon compared to Earth), the range of the projectile would be greater. If the gravitational acceleration <span class="arithmatex">\( g \)</span> is decreased, the range increases, assuming all other factors remain constant.</p>
-<h3 id="combined-effect-of-parameters">Combined Effect of Parameters</h3>
-<p>The horizontal range depends on the combined effects of the initial velocity, the angle of projection, and gravitational acceleration. The optimal angle for the maximum range is <span class="arithmatex">\( 45^\circ \)</span>, but the exact range achieved also depends on how large the initial velocity <span class="arithmatex">\( v_0 \)</span> is and how small the gravitational acceleration $$ g $$ is. </p>
-<p>In summary:
-- The range is maximized at $$ \theta = 45^\circ $$ .
-- A higher initial velocity increases the range.
-- A lower gravitational acceleration increases the range.</p>
-<p><img alt="alt text" src="../image.png"/> </p>
-<p><img alt="alt text" src="../image-6.png"/></p>
-<h2 id="practical-applications">Practical Applications</h2>
-<h3 id="projectiles-on-uneven-terrain">Projectiles on Uneven Terrain</h3>
-<p>The model derived for projectile motion assumes a flat horizontal surface, where the projectile lands at the same height from which it was launched. However, in real-world scenarios, projectiles are often launched on uneven terrain, such as hilly or sloped surfaces. In these cases, the range calculation becomes more complex.</p>
-<p>To adapt the model for uneven terrain, we need to account for the change in height between the launch point and the landing point. The range equation must be modified to include the initial and final vertical displacements. The general form of the equation in the presence of a slope (with angle <span class="arithmatex">\( \alpha \)</span>) is:</p>
-<div class="arithmatex">\[ y(t) = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
-<p>Where the final vertical displacement <span class="arithmatex">\( y(t) \)</span> will equal the slope height <span class="arithmatex">\( h \)</span>, and we would solve for <span class="arithmatex">\( t \)</span> and the corresponding range.</p>
-<p>In this case, numerical methods or simulations are often employed to solve for the time of flight and range, as the equation becomes nonlinear due to the varying terrain height.</p>
-<h3 id="air-resistance">Air Resistance</h3>
-<p>In reality, air resistance plays a significant role in the motion of projectiles, especially at high velocities. Air resistance acts against the motion of the projectile, slowing it down in both the horizontal and vertical directions. This introduces a non-conservative force, and the equations of motion must be modified accordingly.</p>
-<p>The force due to air resistance is typically modeled as:</p>
-<div class="arithmatex">\[ F_{\text{drag}} = \frac{1}{2} C_d \rho A v^2 \]</div>
-<p>Where:
-- <span class="arithmatex">\( C_d \)</span> is the drag coefficient (dependent on the shape of the object),
-- <span class="arithmatex">\( \rho \)</span> is the air density,
-- <span class="arithmatex">\( A \)</span> is the cross-sectional area of the projectile,
-- <span class="arithmatex">\( v \)</span> is the velocity of the projectile.</p>
-<p>To account for air resistance, the motion equations must be solved using the following system of differential equations:</p>
-<ol>
-<li>
-<p>Horizontal direction: 
-   $$ m \frac{d^2 x}{dt^2} = -\frac{1}{2} C_d \rho A v \frac{dx}{dt} $$</p>
-</li>
-<li>
-<p>Vertical direction:
-   $$ m \frac{d^2 y}{dt^2} = -mg - \frac{1}{2} C_d \rho A v \frac{dy}{dt} $$</p>
-</li>
-</ol>
-<p>Here, <span class="arithmatex">\( v = \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \)</span> represents the velocity magnitude.</p>
-<p>Incorporating air resistance requires numerical methods, such as Euler's method or Runge-Kutta methods, to solve these coupled differential equations. This makes the problem significantly more complex but provides a more accurate model of projectile motion in the real world.</p>
-<h3 id="practical-considerations">Practical Considerations</h3>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
+<p>The idealized model can be modified to accommodate real-world complexities, such as:</p>
 <ul>
-<li><strong>Accuracy of the Model</strong>: In practical applications, adjustments for air resistance and terrain are crucial to making accurate predictions. In engineering, for example, understanding these factors is essential for designing projectiles, missiles, or sports equipment.</li>
-<li><strong>Applications in Sports</strong>: In sports such as basketball, soccer, or golf, understanding projectile motion with air resistance is crucial to predicting ball trajectories and optimizing performance.</li>
-<li><strong>Military and Aerospace Engineering</strong>: The design of artillery, missiles, and space missions often requires accounting for air resistance and uneven terrain, especially when the projectiles travel at high speeds and long distances.</li>
+<li><strong>Uneven Terrain</strong>: Altering the vertical motion equations to account for a sloped or varied ground surface.</li>
+<li><strong>Air Resistance</strong>: Introducing a drag force proportional to velocity, which adds nonlinearity to the differential equations.</li>
+<li><strong>Variable Gravity</strong>: Adjusting <span class="arithmatex">\( g \)</span> in high-altitude or planetary simulations where gravity may change with height.</li>
 </ul>
+<p>These extensions are crucial in fields such as:
+- Ballistics and defense
+- Sports physics (e.g., determining optimal angles in basketball or football)
+- Space exploration (trajectory planning on other celestial bodies)</p>
+<h2 id="4-implementation">4. Implementation</h2>
+<p>To analyze and visualize projectile motion computationally, one can develop a simulation algorithm that:</p>
+<ol>
+<li>Accepts initial conditions as input (e.g., <span class="arithmatex">\( v_0 \)</span>, <span class="arithmatex">\( \theta \)</span>, <span class="arithmatex">\( g \)</span>),</li>
+<li>Computes trajectory points using discrete time steps,</li>
+<li>Determines the range and total flight time.</li>
+</ol>
+<h3 id="pseudocode-outline">Pseudocode Outline:</h3>
+<p>```python
+def simulate_projectile(v0, theta_deg, g=9.81, dt=0.01):
+    theta = radians(theta_deg)
+    t = 0
+    x, y = 0, 0
+    vx = v0 * cos(theta)
+    vy = v0 * sin(theta)
+    trajectory = []</p>
+<pre><code>while y &gt;= 0:
+    x += vx * dt
+    y += vy * dt
+    vy -= g * dt
+    t += dt
+    trajectory.append((x, y))
+
+return trajectory
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
