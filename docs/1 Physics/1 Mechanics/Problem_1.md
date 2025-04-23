@@ -1,3 +1,4 @@
+Problem 1
 # Projectile Motion: A Detailed Theoretical and Computational Study
 
 ## 1. Theoretical Foundation
