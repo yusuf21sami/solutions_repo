@@ -56,6 +56,20 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-derivation-of-keplers-third-law-t2-propto-r3-for-circular-orbits">1. Derivation of Kepler's Third Law (\(T^2 \propto r^3\)) for Circular Orbits:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-implications-for-astronomy">2. Implications for Astronomy:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-real-world-examples">3. Real-World Examples:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-using-keplers-third-law-to-find-masses">4. Using Kepler's Third Law to Find Masses:</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#41-mass-of-earth-using-the-moons-orbit">4.1. Mass of Earth using the Moon's Orbit:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-mass-of-the-sun-using-earths-orbit">4.2. Mass of the Sun using Earth's Orbit:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -172,139 +186,76 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="keplers-third-law-orbital-period-and-radius">🌍 Kepler's Third Law: Orbital Period and Radius</h1>
-<h2 id="1-derivation-of-the-keplers-third-law-for-circular-orbits">🧮 1. Derivation of the Kepler's Third Law for Circular Orbits</h2>
-<p>We start by considering the centripetal force required to keep a body in a circular orbit:</p>
-<div class="arithmatex">\[
-F_c = \frac{mv^2}{r}
-\]</div>
-<p>This centripetal force is provided by gravitational attraction:</p>
-<div class="arithmatex">\[
-F_g = \frac{G M m}{r^2}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\( m \)</span>: mass of the orbiting body
-- <span class="arithmatex">\( M \)</span>: mass of the central body (e.g., the Sun)
-- <span class="arithmatex">\( G \)</span>: gravitational constant
-- <span class="arithmatex">\( r \)</span>: orbital radius</p>
-<p>Equating the two forces:</p>
-<div class="arithmatex">\[
-\frac{mv^2}{r} = \frac{G M m}{r^2}
-\]</div>
-<p>Canceling <span class="arithmatex">\( m \)</span> and solving for <span class="arithmatex">\( v \)</span>:</p>
-<div class="arithmatex">\[
-v^2 = \frac{G M}{r}
-\]</div>
-<p>Now, the orbital period <span class="arithmatex">\( T \)</span> is the time to complete one orbit:</p>
-<div class="arithmatex">\[
-T = \frac{2\pi r}{v}
-\]</div>
-<p>Substituting for <span class="arithmatex">\( v \)</span>:</p>
-<div class="arithmatex">\[
-T = \frac{2\pi r}{\sqrt{\frac{G M}{r}}} = 2\pi \sqrt{\frac{r^3}{G M}}
-\]</div>
-<p>Squaring both sides:</p>
-<div class="arithmatex">\[
-T^2 = \frac{4\pi^2}{G M} r^3
-\]</div>
-<p>✅ This is <strong>Kepler's Third Law</strong> in the form:</p>
-<div class="arithmatex">\[
-T^2 \propto r^3
-\]</div>
-<hr/>
-<h2 id="2-astronomical-implications">🔭 2. Astronomical Implications</h2>
+<h2 id="1-derivation-of-keplers-third-law-t2-propto-r3-for-circular-orbits">1. Derivation of Kepler's Third Law (<span class="arithmatex">\(T^2 \propto r^3\)</span>) for Circular Orbits:</h2>
+<p>Consider a planet of mass <span class="arithmatex">\(m\)</span> orbiting a star of mass <span class="arithmatex">\(M\)</span> in a circular orbit of radius <span class="arithmatex">\(r\)</span> with an orbital period <span class="arithmatex">\(T\)</span>. For a stable orbit, the gravitational force providing the centripetal force required for circular motion.</p>
+<p>The gravitational force (<span class="arithmatex">\(F_g\)</span>) between the star and the planet is given by Newton's Law of Universal Gravitation:</p>
+<div class="arithmatex">\[F_g = G \frac{Mm}{r^2}\]</div>
+<p>where <span class="arithmatex">\(G\)</span> is the universal gravitational constant.</p>
+<p>The centripetal force (<span class="arithmatex">\(F_c\)</span>) required to keep the planet in a circular orbit is given by:</p>
+<div class="arithmatex">\[F_c = m a_c = m \frac{v^2}{r}\]</div>
+<p>where <span class="arithmatex">\(v\)</span> is the orbital speed of the planet.</p>
+<p>For a stable circular orbit, the gravitational force must equal the centripetal force:</p>
+<div class="arithmatex">\[G \frac{Mm}{r^2} = m \frac{v^2}{r}\]</div>
+<p>We can cancel the mass of the planet (<span class="arithmatex">\(m\)</span>) from both sides:</p>
+<div class="arithmatex">\[G \frac{M}{r^2} = \frac{v^2}{r}\]</div>
+<p>Now, we need to relate the orbital speed (<span class="arithmatex">\(v\)</span>) to the orbital period (<span class="arithmatex">\(T\)</span>). For one complete orbit, the planet travels a distance equal to the circumference of the circle (<span class="arithmatex">\(2\pi r\)</span>) in time <span class="arithmatex">\(T\)</span>. Therefore, the orbital speed is:</p>
+<div class="arithmatex">\[v = \frac{2\pi r}{T}\]</div>
+<p>Substitute this expression for <span class="arithmatex">\(v\)</span> into the equation above:</p>
+<div class="arithmatex">\[G \frac{M}{r^2} = \frac{\left(\frac{2\pi r}{T}\right)^2}{r}\]</div>
+<div class="arithmatex">\[G \frac{M}{r^2} = \frac{4\pi^2 r^2}{T^2 r}\]</div>
+<div class="arithmatex">\[G \frac{M}{r^2} = \frac{4\pi^2 r}{T^2}\]</div>
+<p>Now, rearrange the equation to find the relationship between <span class="arithmatex">\(T^2\)</span> and <span class="arithmatex">\(r^3\)</span>:</p>
+<div class="arithmatex">\[T^2 = \frac{4\pi^2}{GM} r^3\]</div>
+<p>This equation shows that the square of the orbital period (<span class="arithmatex">\(T^2\)</span>) is directly proportional to the cube of the orbital radius (<span class="arithmatex">\(r^3\)</span>) for circular orbits. The constant of proportionality is <span class="arithmatex">\(\frac{4\pi^2}{GM}\)</span>, which depends only on the mass of the central body (<span class="arithmatex">\(M\)</span>) and the universal gravitational constant (<span class="arithmatex">\(G\)</span>).</p>
+<h2 id="2-implications-for-astronomy">2. Implications for Astronomy:</h2>
+<p>Kepler's Third Law has profound implications for astronomy:</p>
 <ul>
-<li>This relationship allows astronomers to:</li>
-<li>Compare orbital periods and distances of planets.</li>
-<li>Estimate <strong>masses</strong> of celestial bodies using known <span class="arithmatex">\( T \)</span> and <span class="arithmatex">\( r \)</span>.</li>
-<li>Calibrate models of exoplanet systems.</li>
-<li>Predict satellite behavior and planetary motion.</li>
+<li>
+<p><strong>Determining Planetary Masses:</strong> If we know the orbital period (<span class="arithmatex">\(T\)</span>) and the orbital radius (<span class="arithmatex">\(r\)</span>) of a satellite (e.g., a moon) orbiting a planet, we can use Kepler's Third Law to determine the mass of the planet (<span class="arithmatex">\(M_p\)</span>). Rearranging the formula:</p>
+<div class="arithmatex">\[M_p = \frac{4\pi^2 r^3}{GT^2}\]</div>
+<p>This method has been crucial for estimating the masses of planets in our solar system and exoplanets orbiting distant stars.</p>
+</li>
+<li>
+<p><strong>Determining Stellar Masses:</strong> Similarly, if we observe a planet orbiting a star and measure its orbital period and semi-major axis (which is approximately the radius for a nearly circular orbit), we can estimate the mass of the star (<span class="arithmatex">\(M_s\)</span>):</p>
+<div class="arithmatex">\[M_s = \frac{4\pi^2 a^3}{GT^2}\]</div>
+<p>where <span class="arithmatex">\(a\)</span> is the semi-major axis. This is a fundamental technique for studying the properties of stars.</p>
+</li>
+<li>
+<p><strong>Estimating Distances in Space:</strong> While the law is derived assuming we know the orbital radius, in some cases, if we know the mass of the central body and can measure the orbital period of an orbiting object, we can estimate the orbital radius. This is particularly useful in understanding the scale of star systems and galaxies.</p>
+</li>
+<li>
+<p><strong>Understanding Orbital Dynamics:</strong> Kepler's Third Law provides a fundamental relationship that governs the motion of celestial bodies under the influence of gravity. It helps astronomers understand the stability and characteristics of different orbital systems.</p>
+</li>
 </ul>
-<p>If <span class="arithmatex">\( T \)</span> and <span class="arithmatex">\( r \)</span> are known, we can solve for <span class="arithmatex">\( M \)</span>:</p>
-<div class="arithmatex">\[
-M = \frac{4\pi^2 r^3}{G T^2}
-\]</div>
-<hr/>
-<h1 id="earths-orbit">Earth's orbit</h1>
-<p>r = 1.496e11  # meters
-T = 3.154e7   # seconds</p>
-<p>M_sun = (4 * np.pi<strong>2 * r</strong>3) / (G * T**2)
-print(f"Estimated Mass of the Sun: {M_sun:.2e} kg")</p>
-<p>r_moon = 3.84e8  # meters
-T_moon = 2.36e6  # seconds</p>
-<p>M_earth = (4 * np.pi<strong>2 * r_moon</strong>3) / (G * T_moon**2)
-print(f"Estimated Mass of Earth: {M_earth:.2e} kg")</p>
-<h2 id="3-real-world-example-inner-planets-of-the-solar-system">🌌 3. Real-World Example: Inner Planets of the Solar System</h2>
-<p>Let’s consider four planets:</p>
-<table>
-<thead>
-<tr>
-<th>Planet</th>
-<th>Orbital Radius (AU)</th>
-<th>Orbital Period (years)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mercury</td>
-<td>0.387</td>
-<td>0.241</td>
-</tr>
-<tr>
-<td>Venus</td>
-<td>0.723</td>
-<td>0.615</td>
-</tr>
-<tr>
-<td>Earth</td>
-<td>1.000</td>
-<td>1.000</td>
-</tr>
-<tr>
-<td>Mars</td>
-<td>1.524</td>
-<td>1.881</td>
-</tr>
-</tbody>
-</table>
-<p>We will plot <span class="arithmatex">\( T^2 \)</span> vs <span class="arithmatex">\( r^3 \)</span> to visually confirm the linear relationship.</p>
-<hr/>
-<h2 id="4-python-simulation-of-keplers-law-t2-vs-r3">💻 4. Python Simulation of Kepler’s Law (T² vs r³)</h2>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="au-to-meters-and-years-to-seconds">AU to meters and years to seconds</h1>
-<p>AU = 1.496e11  # meters
-yr = 3.154e7   # seconds
-G = 6.67430e-11  # m^3 kg^-1 s^-2</p>
-<h1 id="data-for-4-planets-mercury-venus-earth-mars">Data for 4 planets: Mercury, Venus, Earth, Mars</h1>
-<p>planets = {
-    "Mercury": (0.387, 0.241),
-    "Venus": (0.723, 0.615),
-    "Earth": (1.000, 1.000),
-    "Mars": (1.524, 1.881),
-}</p>
-<h1 id="prepare-lists">Prepare lists</h1>
-<p>r_AU = []
-T_years = []</p>
-<p>for name, (r, T) in planets.items():
-    r_AU.append(r)
-    T_years.append(T)</p>
-<p>r_AU = np.array(r_AU)
-T_years = np.array(T_years)</p>
-<h1 id="calculate-r3-and-t2">Calculate r^3 and T^2</h1>
-<p>r3 = r_AU<strong>3
-T2 = T_years</strong>2</p>
-<h1 id="plotting-t2-vs-r3">Plotting T^2 vs r^3</h1>
-<p>plt.figure(figsize=(6, 4))
-plt.plot(r3, T2, 'o-', label="Planets", color="navy")
-plt.xlabel(r"<span class="arithmatex">\(r^3\)</span> (AU<span class="arithmatex">\(^3\)</span>)")
-plt.ylabel(r"<span class="arithmatex">\(T^2\)</span> (years<span class="arithmatex">\(^2\)</span>)")
-plt.title(r"Kepler's Third Law: <span class="arithmatex">\(T^2\)</span> vs <span class="arithmatex">\(r^3\)</span>")
-plt.grid(True)
-plt.legend()
-plt.tight_layout()
-plt.show()</p>
+<h2 id="3-real-world-examples">3. Real-World Examples:</h2>
+<ul>
+<li>
+<p><strong>The Moon's Orbit Around Earth:</strong> The Moon orbits the Earth with a period of approximately 27.3 days (<span class="arithmatex">\(T_{Moon}\)</span>) and an average orbital radius of about <span class="arithmatex">\(3.84 \times 10^8\)</span> meters (<span class="arithmatex">\(r_{Moon}\)</span>). We can use these values and the known mass of the Earth to verify Kepler's Third Law for this system or, conversely, use the Moon's orbit to estimate the Earth's mass (as shown in section 4).</p>
+</li>
+<li>
+<p><strong>Orbits of Planets in the Solar System:</strong> The planets in our solar system orbit the Sun in elliptical paths that are close to circular. Kepler's Third Law accurately describes the relationship between their orbital periods and their average distances (semi-major axes) from the Sun. Planets farther from the Sun have significantly longer orbital periods. For example, Mercury, being closest to the Sun, has a much shorter orbital period than Neptune, the farthest major planet.</p>
+</li>
+</ul>
+<h2 id="4-using-keplers-third-law-to-find-masses">4. Using Kepler's Third Law to Find Masses:</h2>
+<h3 id="41-mass-of-earth-using-the-moons-orbit">4.1. Mass of Earth using the Moon's Orbit:</h3>
+<p>We know the Moon's orbital period <span class="arithmatex">\(T_{Moon} \approx 27.3 \text{ days} = 27.3 \times 24 \times 3600 \approx 2.36 \times 10^6 \text{ s}\)</span> and its average orbital radius <span class="arithmatex">\(r_{Moon} \approx 3.84 \times 10^8 \text{ m}\)</span>. Using Kepler's Third Law (rearranged for the central mass):</p>
+<div class="arithmatex">\[M_{Earth} = \frac{4\pi^2 r_{Moon}^3}{GT_{Moon}^2}\]</div>
+<p>Plugging in the values (<span class="arithmatex">\(G = 6.674 \times 10^{-11} \text{ N m}^2/\text{kg}^2\)</span>):</p>
+<div class="arithmatex">\[M_{Earth} = \frac{4\pi^2 (3.84 \times 10^8 \text{ m})^3}{(6.674 \times 10^{-11} \text{ N m}^2/\text{kg}^2)(2.36 \times 10^6 \text{ s})^2}\]</div>
+<div class="arithmatex">\[M_{Earth} \approx \frac{4\pi^2 (5.66 \times 10^{25})}{(6.674 \times 10^{-11})(5.57 \times 10^{12})}\]</div>
+<div class="arithmatex">\[M_{Earth} \approx \frac{2.24 \times 10^{27}}{3.71 \times 10^2}\]</div>
+<div class="arithmatex">\[M_{Earth} \approx 6.04 \times 10^{24} \text{ kg}\]</div>
+<p>This value is very close to the accepted mass of the Earth (<span class="arithmatex">\(5.972 \times 10^{24} \text{ kg}\)</span>).</p>
+<h3 id="42-mass-of-the-sun-using-earths-orbit">4.2. Mass of the Sun using Earth's Orbit:</h3>
+<p>We know Earth's orbital period <span class="arithmatex">\(T_{Earth} \approx 365.25 \text{ days} = 365.25 \times 24 \times 3600 \approx 3.156 \times 10^7 \text{ s}\)</span> and its average orbital radius (semi-major axis) <span class="arithmatex">\(a_{Earth} \approx 1.496 \times 10^{11} \text{ m}\)</span> (1 Astronomical Unit). Using Kepler's Third Law:</p>
+<div class="arithmatex">\[M_{Sun} = \frac{4\pi^2 a_{Earth}^3}{GT_{Earth}^2}\]</div>
+<p>Plugging in the values:</p>
+<div class="arithmatex">\[M_{Sun} = \frac{4\pi^2 (1.496 \times 10^{11} \text{ m})^3}{(6.674 \times 10^{-11} \text{ N m}^2/\text{kg}^2)(3.156 \times 10^7 \text{ s})^2}\]</div>
+<div class="arithmatex">\[M_{Sun} = \frac{4\pi^2 (3.348 \times 10^{33})}{(6.674 \times 10^{-11})(9.96 \times 10^{14})}\]</div>
+<div class="arithmatex">\[M_{Sun} \approx \frac{1.32 \times 10^{35}}{6.64 \times 10^4}\]</div>
+<div class="arithmatex">\[M_{Sun} \approx 1.99 \times 10^{30} \text{ kg}\]</div>
+<p>This value is also very close to the accepted mass of the Sun (<span class="arithmatex">\(1.989 \times 10^{30} \text{ kg}\)</span>).</p>
+<p>These calculations demonstrate the power of Kepler's Third Law in determining the masses of celestial objects.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
