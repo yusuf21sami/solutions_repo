@@ -73,3 +73,13 @@ To analyze and visualize projectile motion computationally, one can develop a si
 3. Determines the range and total flight time.
 
 ![alt text](image-8.png)
+"""
+This graph consists of two subplots illustrating the influence of initial speed and launch angle on projectile motion.
+
+(a) In the first subplot, the launch angle is fixed at 45°, while the initial speed varies (30, 40, and 50 m/s). 
+    The result shows that the horizontal range increases significantly with higher initial speeds.
+
+(b) In the second subplot, the initial speed is fixed at 50 m/s, while the launch angle varies (15°, 45°, 75°).
+    The maximum range is achieved at 45°, and angles symmetric around 45° (e.g., 15° and 75°) yield the same range,
+    but with different trajectory shapes and heights.
+"""
