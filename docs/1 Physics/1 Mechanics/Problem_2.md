@@ -83,6 +83,8 @@
 
     **Physical Interpretations:** Chaotic motion in a forced damped pendulum indicates a complex interplay between the driving force, damping, and the nonlinear restoring force ($\sin\theta$). It suggests that even seemingly simple deterministic systems can exhibit highly complex and unpredictable behavior under certain conditions.
 
+![alt text](image-11.png)
+
 ## 3. Practical Applications:
 
 * **Discuss real-world scenarios where the forced damped pendulum model applies, such as in energy harvesting devices, suspension bridges, and oscillating circuits:**
