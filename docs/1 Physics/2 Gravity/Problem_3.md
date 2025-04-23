@@ -27,6 +27,8 @@ $$v_e = \sqrt{\frac{2GM}{r}}$$
 
 where $r = R_E + h$, with $R_E$ being the Earth's radius and $h$ being the altitude above the surface.
 
+![alt text](image-9.png)
+
 ### 2. Numerical Analysis of Payload Path:
 
 To compute the path of the payload, we can use numerical integration methods to solve the equations of motion under Earth's gravity. Assuming only Earth's gravity is significant, the acceleration of the payload is given by:
@@ -50,6 +52,8 @@ $$\mathbf{r}_{i+1} = \mathbf{r}_i + \mathbf{v}_i \Delta t$$
 where $\mathbf{a}_i = -\frac{GM}{|\mathbf{r}_i|^3} \mathbf{r}_i$. More accurate methods like RK4 involve multiple evaluations of the acceleration within each time step.
 
 The choice of time step $\Delta t$ affects the accuracy and stability of the numerical solution. Smaller time steps generally lead to more accurate results but require more computation.
+
+![alt text](image-10.png)
 
 ### 3. Relation to Orbital Insertion, Reentry, and Escape Scenarios:
 
