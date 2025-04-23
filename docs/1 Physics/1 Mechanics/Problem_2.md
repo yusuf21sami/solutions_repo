@@ -85,6 +85,34 @@
 
 ![alt text](image-11.png)
 
+## 🌀 Forced Damped Pendulum: Summary of Scenarios
+
+We analyze the behavior of a pendulum under four different configurations by plotting:
+
+- **Angle vs Time (θ(t))**
+- **Phase Diagram (θ vs ω)**
+
+### 1. Pure Pendulum (`b = 0, A = 0`)
+- No damping or external force.
+- System oscillates with constant amplitude.
+- Energy is conserved.
+
+### 2. Damped Pendulum (`b ≠ 0, A = 0`)
+- No external force.
+- Oscillations decay over time due to damping.
+
+### 3. Forced Pendulum (`b = 0, A ≠ 0`)
+- No damping.
+- External periodic force drives the system.
+- Amplitude can grow near resonance.
+
+### 4. Forced + Damped Pendulum
+- Two cases shown:
+  - **Resonance**: Moderate damping and forcing; steady oscillations.
+  - **Chaos**: High forcing and damping; irregular, chaotic motion.
+
+---
+
 ## 3. Practical Applications:
 
 * **Discuss real-world scenarios where the forced damped pendulum model applies, such as in energy harvesting devices, suspension bridges, and oscillating circuits:**
