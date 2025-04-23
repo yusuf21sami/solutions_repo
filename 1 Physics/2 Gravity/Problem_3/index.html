@@ -217,6 +217,7 @@
 <p>The escape velocity (<span class="arithmatex">\(v_e\)</span>) at a distance <span class="arithmatex">\(r\)</span> from the center of the Earth (mass <span class="arithmatex">\(M\)</span>, gravitational constant <span class="arithmatex">\(G\)</span>) is given by:</p>
 <div class="arithmatex">\[v_e = \sqrt{\frac{2GM}{r}}\]</div>
 <p>where <span class="arithmatex">\(r = R_E + h\)</span>, with <span class="arithmatex">\(R_E\)</span> being the Earth's radius and <span class="arithmatex">\(h\)</span> being the altitude above the surface.</p>
+<p><img alt="alt text" src="../image-9.png"/></p>
 <h3 id="2-numerical-analysis-of-payload-path">2. Numerical Analysis of Payload Path:</h3>
 <p>To compute the path of the payload, we can use numerical integration methods to solve the equations of motion under Earth's gravity. Assuming only Earth's gravity is significant, the acceleration of the payload is given by:</p>
 <div class="arithmatex">\[\mathbf{a} = \frac{d^2\mathbf{r}}{dt^2} = -\frac{GM}{|\mathbf{r}|^3} \mathbf{r}\]</div>
@@ -230,6 +231,7 @@
 <div class="arithmatex">\[\mathbf{r}_{i+1} = \mathbf{r}_i + \mathbf{v}_i \Delta t\]</div>
 <p>where <span class="arithmatex">\(\mathbf{a}_i = -\frac{GM}{|\mathbf{r}_i|^3} \mathbf{r}_i\)</span>. More accurate methods like RK4 involve multiple evaluations of the acceleration within each time step.</p>
 <p>The choice of time step <span class="arithmatex">\(\Delta t\)</span> affects the accuracy and stability of the numerical solution. Smaller time steps generally lead to more accurate results but require more computation.</p>
+<p><img alt="alt text" src="../image-10.png"/></p>
 <h3 id="3-relation-to-orbital-insertion-reentry-and-escape-scenarios">3. Relation to Orbital Insertion, Reentry, and Escape Scenarios:</h3>
 <ul>
 <li>
