@@ -61,11 +61,16 @@ Kepler's Third Law has profound implications for astronomy:
 
 * **Understanding Orbital Dynamics:** Kepler's Third Law provides a fundamental relationship that governs the motion of celestial bodies under the influence of gravity. It helps astronomers understand the stability and characteristics of different orbital systems.
 
+![alt text](image-7.png)
+
 ## 3. Real-World Examples:
 
 * **The Moon's Orbit Around Earth:** The Moon orbits the Earth with a period of approximately 27.3 days ($T_{Moon}$) and an average orbital radius of about $3.84 \times 10^8$ meters ($r_{Moon}$). We can use these values and the known mass of the Earth to verify Kepler's Third Law for this system or, conversely, use the Moon's orbit to estimate the Earth's mass (as shown in section 4).
 
-* **Orbits of Planets in the Solar System:** The planets in our solar system orbit the Sun in elliptical paths that are close to circular. Kepler's Third Law accurately describes the relationship between their orbital periods and their average distances (semi-major axes) from the Sun. Planets farther from the Sun have significantly longer orbital periods. For example, Mercury, being closest to the Sun, has a much shorter orbital period than Neptune, the farthest major planet.
+* **Orbits of Planets in the Solar System:** The planets in our solar system orbit the Sun in elliptical paths that are close to circular. Kepler's Third Law accurately describes the relationship between their orbital periods and their average distances (semi-major axes) from the Sun. Planets farther from the Sun have significantly longer orbital periods. For example, Mercury, being 
+closest to the Sun, has a much shorter orbital period than Neptune, the farthest major planet.
+
+![alt text](image-8.png)
 
 ## 4. Using Kepler's Third Law to Find Masses:
 
