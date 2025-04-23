@@ -59,10 +59,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#pseudocode-outline">Pseudocode Outline:</a>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -244,24 +240,6 @@ R = \frac{v_0^2 \sin(2\theta)}{g}
 <li>Computes trajectory points using discrete time steps,</li>
 <li>Determines the range and total flight time.</li>
 </ol>
-<h3 id="pseudocode-outline">Pseudocode Outline:</h3>
-<p>```python
-def simulate_projectile(v0, theta_deg, g=9.81, dt=0.01):
-    theta = radians(theta_deg)
-    t = 0
-    x, y = 0, 0
-    vx = v0 * cos(theta)
-    vy = v0 * sin(theta)
-    trajectory = []</p>
-<pre><code>while y &gt;= 0:
-    x += vx * dt
-    y += vy * dt
-    vy -= g * dt
-    t += dt
-    trajectory.append((x, y))
-
-return trajectory
-</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
