@@ -72,22 +72,3 @@ To analyze and visualize projectile motion computationally, one can develop a si
 2. Computes trajectory points using discrete time steps,
 3. Determines the range and total flight time.
 
-### Pseudocode Outline:
-
-```python
-def simulate_projectile(v0, theta_deg, g=9.81, dt=0.01):
-    theta = radians(theta_deg)
-    t = 0
-    x, y = 0, 0
-    vx = v0 * cos(theta)
-    vy = v0 * sin(theta)
-    trajectory = []
-
-    while y >= 0:
-        x += vx * dt
-        y += vy * dt
-        vy -= g * dt
-        t += dt
-        trajectory.append((x, y))
-
-    return trajectory
