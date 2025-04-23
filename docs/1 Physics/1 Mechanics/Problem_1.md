@@ -72,3 +72,4 @@ To analyze and visualize projectile motion computationally, one can develop a si
 2. Computes trajectory points using discrete time steps,
 3. Determines the range and total flight time.
 
+![alt text](image-8.png)
