@@ -27,7 +27,7 @@ $$v_e = \sqrt{\frac{2GM}{r}}$$
 
 where $r = R_E + h$, with $R_E$ being the Earth's radius and $h$ being the altitude above the surface.
 
-![alt text](image-9.png)
+![alt text](image-11.png)
 
 ### 2. Numerical Analysis of Payload Path:
 
