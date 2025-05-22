@@ -109,3 +109,51 @@ These interference effects depend on:
 - Wavelength
 - Frequency
 - Spatial arrangement
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Wave parameters
+A = 1.0
+λ = 2.0
+f = 1.0
+k = 2 * np.pi / λ
+ω = 2 * np.pi * f
+φ = 0
+t = 0  # static snapshot
+
+# Grid setup
+x = np.linspace(-10, 10, 500)
+y = np.linspace(-10, 10, 500)
+X, Y = np.meshgrid(x, y)
+
+def wave_from_source(x0, y0, X, Y, t):
+    r = np.sqrt((X - x0)**2 + (Y - y0)**2)
+    r[r == 0] = 1e-6  # avoid division by zero
+    η = A / np.sqrt(r) * np.cos(k * r - ω * t + φ)
+    return η
+
+def total_wave(sources, X, Y, t):
+    η_total = np.zeros_like(X)
+    for (x0, y0) in sources:
+        η_total += wave_from_source(x0, y0, X, Y, t)
+    return η_total
+
+def regular_polygon_sources(N, radius=5, center=(0, 0)):
+    cx, cy = center
+    return [
+        (cx + radius * np.cos(2 * np.pi * i / N),
+         cy + radius * np.sin(2 * np.pi * i / N))
+        for i in range(N)
+    ]
+
+def plot_heatmap(η, title):
+    plt.figure(figsize=(6, 5))
+    plt.imshow(η, extent=[-10, 10, -10, 10], cmap='seismic', origin='lower')
+    plt.colorbar(label='Displacement η')
+    plt.title(title)
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.tight_layout()
+    plt.show()
