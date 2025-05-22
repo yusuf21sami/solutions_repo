@@ -128,6 +128,7 @@ project/
 ├── style.css  (isteğe bağlı)
 └── assets/
     └── two_sources_interference.gif
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
