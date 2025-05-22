@@ -172,66 +172,82 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="circular-water-wave-interference-simulation">🌊 Circular Water Wave Interference Simulation</h1>
-<h2 id="task-overview">📘 Task Overview</h2>
-<p>We simulate circular water waves emitted from point sources placed at the vertices of a regular polygon. Using the principle of superposition, we analyze interference patterns (constructive and destructive) formed on the water surface.</p>
+<h1 id="wave-interference-simulation-on-water-surface">🌊 Wave Interference Simulation on Water Surface</h1>
+<h2 id="task-overview">🎯 Task Overview</h2>
+<p>We are tasked with analyzing the <strong>interference patterns</strong> created by <strong>circular water waves</strong> emitted from <strong>multiple coherent point sources</strong>, which are positioned at the <strong>vertices of a regular polygon</strong>.</p>
+<p>This involves studying <strong>constructive and destructive interference</strong> as the waves spread and interact over time and space.</p>
 <hr/>
-<h2 id="mathematical-model">📐 Mathematical Model</h2>
-<h3 id="single-disturbance-equation">Single Disturbance Equation</h3>
-<p>The displacement <span class="arithmatex">\( \eta(x, y, t) \)</span> of the water surface at point <span class="arithmatex">\( (x, y) \)</span> and time <span class="arithmatex">\( t \)</span> from a single point source located at <span class="arithmatex">\( (x_0, y_0) \)</span> is:</p>
+<h2 id="mathematical-foundation">📐 Mathematical Foundation</h2>
+<h3 id="single-point-source-circular-wave-equation">🔹 Single Point Source: Circular Wave Equation</h3>
+<p>The vertical displacement <span class="arithmatex">\( \eta(x, y, t) \)</span> of the water surface at a point <span class="arithmatex">\( (x, y) \)</span> and time <span class="arithmatex">\( t \)</span>, caused by a point source located at <span class="arithmatex">\( (x_0, y_0) \)</span>, is modeled by:</p>
 <div class="arithmatex">\[
 \eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
 \]</div>
-<p>where:</p>
+<p>Where:</p>
 <ul>
-<li><span class="arithmatex">\( A \)</span>: amplitude of the wave  </li>
-<li><span class="arithmatex">\( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)</span>: distance from source  </li>
-<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span>: wave number  </li>
-<li><span class="arithmatex">\( \omega = 2\pi f \)</span>: angular frequency  </li>
-<li><span class="arithmatex">\( \phi \)</span>: initial phase (assumed 0 for coherence)</li>
+<li><span class="arithmatex">\( A \)</span>: amplitude of the wave (how high the peaks are)</li>
+<li><span class="arithmatex">\( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)</span>: radial distance from the source</li>
+<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span>: wave number, related to the wavelength <span class="arithmatex">\( \lambda \)</span></li>
+<li><span class="arithmatex">\( \omega = 2\pi f \)</span>: angular frequency, related to the frequency <span class="arithmatex">\( f \)</span></li>
+<li><span class="arithmatex">\( \phi \)</span>: initial phase</li>
+<li><span class="arithmatex">\( \frac{1}{\sqrt{r}} \)</span>: accounts for 2D spreading — energy disperses in a circular pattern</li>
+</ul>
+<p>This equation assumes <strong>linear, non-dissipative</strong>, and <strong>isotropic wave propagation</strong> — a typical approximation for surface ripples in water.</p>
+<hr/>
+<h2 id="problem-statement">🧪 Problem Statement</h2>
+<p>We want to simulate and analyze the <strong>interference patterns</strong> created by the superposition of surface waves, each emitted from point sources arranged in a <strong>regular polygon</strong>.</p>
+<p>We aim to:</p>
+<ul>
+<li>Identify regions of <strong>constructive interference</strong> (amplification)  </li>
+<li>Identify regions of <strong>destructive interference</strong> (cancellation)  </li>
+<li>Visualize how these patterns evolve over time</li>
 </ul>
 <hr/>
-<h3 id="multiple-sources-superposition">Multiple Sources: Superposition</h3>
-<p>For <span class="arithmatex">\( N \)</span> sources placed at the vertices of a regular polygon, the net displacement is:</p>
+<h2 id="step-by-step-procedure-with-physical-reasoning">🧭 Step-by-Step Procedure with Physical Reasoning</h2>
+<h3 id="1-select-a-regular-polygon">1. <strong>Select a Regular Polygon</strong></h3>
+<p>Choose a regular polygon (e.g., triangle, square, pentagon). This determines:</p>
+<ul>
+<li>The number of point sources <span class="arithmatex">\( N \)</span></li>
+<li>Their symmetric positions around a center</li>
+<li>The overall interference geometry (e.g., triangular symmetry)</li>
+</ul>
+<h3 id="2-position-the-sources">2. <strong>Position the Sources</strong></h3>
+<p>Place point sources at the <strong>vertices</strong> of the selected polygon.<br/>
+If the polygon is centered at the origin and has radius <span class="arithmatex">\( R \)</span>, then the position of the <span class="arithmatex">\( i \)</span>-th vertex is:</p>
+<div class="arithmatex">\[
+(x_i, y_i) = \left( R \cos\left( \frac{2\pi i}{N} \right), R \sin\left( \frac{2\pi i}{N} \right) \right), \quad i = 0, 1, ..., N-1
+\]</div>
+<p>This provides evenly spaced sources around a circle.</p>
+<h3 id="3-write-the-wave-equation-for-each-source">3. <strong>Write the Wave Equation for Each Source</strong></h3>
+<p>For each source <span class="arithmatex">\( i \)</span> located at <span class="arithmatex">\( (x_i, y_i) \)</span>, the wave it emits is:</p>
+<div class="arithmatex">\[
+\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>where <span class="arithmatex">\( r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2} \)</span></p>
+<p>All sources emit <strong>coherently</strong>: they have the same frequency, wavelength, amplitude, and phase.</p>
+<h3 id="4-apply-superposition-principle">4. <strong>Apply Superposition Principle</strong></h3>
+<p>At each point <span class="arithmatex">\( (x, y) \)</span> on the surface, the total displacement is the sum of individual contributions:</p>
 <div class="arithmatex">\[
 \eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
 \]</div>
+<p>This is the <strong>core concept of wave interference</strong>. The waves add up constructively or destructively depending on their phase relationship at each point.</p>
 <hr/>
-<h2 id="assumptions">🧠 Assumptions</h2>
-<ul>
-<li>All sources have identical parameters: same <span class="arithmatex">\( A, \lambda, f, \phi \)</span></li>
-<li>Coherent waves (same phase relation)</li>
-<li>Simulation performed in a 2D grid using NumPy</li>
-</ul>
-<hr/>
-<h2 id="python-code-simulation-setup">🐍 Python Code (Simulation Setup)</h2>
-<p>```python
-import numpy as np</p>
-<h1 id="wave-parameters">Wave parameters</h1>
-<p>A = 1.0           # Amplitude
-λ = 2.0           # Wavelength
-f = 1.0           # Frequency (Hz)
-k = 2 * np.pi / λ # Wave number
-ω = 2 * np.pi * f # Angular frequency
-φ = 0             # Initial phase</p>
-<h1 id="grid-setup">Grid setup</h1>
-<p>x = np.linspace(-10, 10, 500)
-y = np.linspace(-10, 10, 500)
-X, Y = np.meshgrid(x, y)</p>
-<h1 id="time-parameter-for-snapshot">Time parameter for snapshot</h1>
-<p>t = 0</p>
-<p>def wave_from_source(x0, y0, X, Y, t):
-    r = np.sqrt((X - x0)<strong>2 + (Y - y0)</strong>2)
-    # To avoid division by zero at r=0
-    r[r == 0] = 1e-6
-    η = A / np.sqrt(r) * np.cos(k * r - ω * t + φ)
-    return η</p>
-<h1 id="example-single-source-at-origin">Example: Single source at origin</h1>
-<p>sources = [(0, 0)]</p>
-<h1 id="calculate-superposition">Calculate superposition</h1>
-<p>η_sum = np.zeros_like(X)
-for x0, y0 in sources:
-    η_sum += wave_from_source(x0, y0, X, Y, t)</p>
+<h2 id="analyzing-interference-patterns">🔬 Analyzing Interference Patterns</h2>
+<h3 id="constructive-interference">Constructive Interference</h3>
+<p>Occurs when wave crests from different sources meet:
+- Waves arrive <strong>in-phase</strong>
+- Resulting amplitude increases
+- Mathematically, phase difference <span class="arithmatex">\( \Delta \phi = 2n\pi \)</span></p>
+<h3 id="destructive-interference">Destructive Interference</h3>
+<p>Occurs when a crest meets a trough:
+- Waves arrive <strong>out-of-phase</strong>
+- Resulting amplitude decreases or cancels
+- Phase difference <span class="arithmatex">\( \Delta \phi = (2n+1)\pi \)</span></p>
+<p>These interference effects depend on:
+- Source distances
+- Wavelength
+- Frequency
+- Spatial arrangement</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
