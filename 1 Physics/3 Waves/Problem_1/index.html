@@ -172,203 +172,66 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>import numpy as np</p>
-<h1 id="-constants-and-basic-wave-parameters-">--- Constants and Basic Wave Parameters ---</h1>
-<h1 id="these-can-be-adjusted-as-needed-for-simulations">These can be adjusted as needed for simulations</h1>
-<h1 id="a-amplitude-of-the-wave-at-the-source">A: Amplitude of the wave at the source</h1>
-<p>DEFAULT_AMPLITUDE = 1.0</p>
-<h1 id="k-wave-number-k-2pi-lambda">k: Wave number (k = 2*pi / lambda)</h1>
-<p>DEFAULT_WAVE_NUMBER = 1.0  # Corresponds to lambda = 2*pi</p>
-<h1 id="omega-angular-frequency-omega-2pi-f">omega: Angular frequency (omega = 2*pi * f)</h1>
-<p>DEFAULT_ANGULAR_FREQUENCY = 1.0 # Corresponds to f = 1 / (2*pi)</p>
-<h1 id="phi-initial-phase">phi: Initial phase</h1>
-<p>DEFAULT_PHASE = 0.0</p>
-<h1 id="-helper-function-for-distance-">--- Helper Function for Distance ---</h1>
-<p>def calculate_distance(x, y, x_source, y_source):
-    """
-    Calculates the distance from a source to a point (x,y).</p>
-<pre><code>Args:
-    x (float or np.ndarray): x-coordinate(s) of the observation point(s).
-    y (float or np.ndarray): y-coordinate(s) of the observation point(s).
-    x_source (float): x-coordinate of the wave source.
-    y_source (float): y-coordinate of the wave source.
-
-Returns:
-    float or np.ndarray: Distance(s) from the source to the point(s).
-"""
-return np.sqrt((x - x_source)**2 + (y - y_source)**2)
-</code></pre>
-<h1 id="-1-single-wave-source-">--- 1. Single Wave Source ---</h1>
-<p>def single_wave_source_displacement(x, y, t, source_pos, 
-                                    amplitude=DEFAULT_AMPLITUDE, 
-                                    wave_number=DEFAULT_WAVE_NUMBER, 
-                                    angular_frequency=DEFAULT_ANGULAR_FREQUENCY, 
-                                    phase=DEFAULT_PHASE):
-    """
-    Calculates the displacement of the water surface due to a single circular wave source.
-    Equation: eta(x,y,t) = (A / sqrt(r)) * cos(k<em>r - omega</em>t + phi)</p>
-<pre><code>Args:
-    x (float or np.ndarray): x-coordinate(s) of the observation point(s).
-    y (float or np.ndarray): y-coordinate(s) of the observation point(s).
-    t (float): Time.
-    source_pos (tuple): (x0, y0) coordinates of the wave source.
-    amplitude (float): Initial amplitude of the wave.
-    wave_number (float): Wave number (k).
-    angular_frequency (float): Angular frequency (omega).
-    phase (float): Initial phase (phi).
-
-Returns:
-    float or np.ndarray: Displacement(s) eta(x,y,t) at the given point(s) and time.
-                       Returns 0 if distance r is 0 to avoid division by zero,
-                       though physically the model breaks down at r=0.
-"""
-x_source, y_source = source_pos
-r = calculate_distance(x, y, x_source, y_source)
-
-# Avoid division by zero at the source location
-# In reality, the model isn't perfect at r=0.
-# We can return a large amplitude or handle it as a special case.
-# For simplicity, if r is very small, we can cap the amplitude or return 0 for the numerical calculation.
-# Let's return 0 if r is exactly 0, and for very small r, sqrt(r) will be small, leading to large amplitude.
-displacement = np.zeros_like(r)
-
-# Calculate only for r &gt; 0 to avoid division by zero and sqrt of zero.
-# A very small epsilon can be used if strict r &gt; 0 is needed.
-non_zero_r_mask = r &gt; 1e-9 # Avoid issues very close to the source
-
-if np.any(non_zero_r_mask):
-    r_safe = r[non_zero_r_mask]
-    displacement[non_zero_r_mask] = (amplitude / np.sqrt(r_safe)) * \
-                                    np.cos(wave_number * r_safe - angular_frequency * t + phase)
-
-# Handle the case where r is exactly zero (at the source)
-# Physically, amplitude is undefined or extremely large.
-# For simulation, you might want to set a max cap or a specific behavior.
-# Here, if r=0, it will remain 0 due to the mask.
-
-return displacement
-</code></pre>
-<h1 id="-2-two-wave-sources-interference-">--- 2. Two Wave Sources (Interference) ---</h1>
-<p>def two_wave_sources_interference(x, y, t, source1_pos, source2_pos,
-                                  amplitude=DEFAULT_AMPLITUDE, 
-                                  wave_number=DEFAULT_WAVE_NUMBER, 
-                                  angular_frequency=DEFAULT_ANGULAR_FREQUENCY, 
-                                  phase=DEFAULT_PHASE):
-    """
-    Calculates the total displacement due to interference from two identical wave sources.</p>
-<pre><code>Args:
-    x (float or np.ndarray): x-coordinate(s) of the observation point(s).
-    y (float or np.ndarray): y-coordinate(s) of the observation point(s).
-    t (float): Time.
-    source1_pos (tuple): (x1, y1) coordinates of the first wave source.
-    source2_pos (tuple): (x2, y2) coordinates of the second wave source.
-    amplitude (float): Initial amplitude of the waves (assumed same for both).
-    wave_number (float): Wave number (k) (assumed same for both).
-    angular_frequency (float): Angular frequency (omega) (assumed same for both).
-    phase (float): Initial phase (phi) (assumed same for both).
-
-Returns:
-    float or np.ndarray: Total displacement eta_total(x,y,t).
-"""
-eta1 = single_wave_source_displacement(x, y, t, source1_pos, 
-                                       amplitude, wave_number, angular_frequency, phase)
-eta2 = single_wave_source_displacement(x, y, t, source2_pos,
-                                       amplitude, wave_number, angular_frequency, phase)
-
-return eta1 + eta2
-</code></pre>
-<h1 id="-3-multiple-wave-sources-interference-">--- 3. Multiple Wave Sources (Interference) ---</h1>
-<p>def multiple_wave_sources_interference(x, y, t, sources_params):
-    """
-    Calculates the total displacement due to interference from multiple wave sources.</p>
-<pre><code>Args:
-    x (float or np.ndarray): x-coordinate(s) of the observation point(s).
-    y (float or np.ndarray): y-coordinate(s) of the observation point(s).
-    t (float): Time.
-    sources_params (list of dicts): A list where each dictionary contains
-        parameters for a single source:
-        {
-            'pos': (xs, ys),          # Source position
-            'amplitude': A_s,         # Source amplitude
-            'wave_number': k_s,       # Source wave number
-            'angular_frequency': w_s, # Source angular frequency
-            'phase': phi_s            # Source initial phase
-        }
-        If a parameter is not provided for a source, default values will be used.
-
-Returns:
-    float or np.ndarray: Total displacement eta_total(x,y,t).
-"""
-total_displacement = np.zeros_like(x, dtype=float) # Ensure it's float for accumulation
-
-for params in sources_params:
-    pos = params.get('pos')
-    if pos is None:
-        print("Warning: Source position missing for one of the sources. Skipping this source.")
-        continue # Skip this source if position is not defined
-
-    amp = params.get('amplitude', DEFAULT_AMPLITUDE)
-    k = params.get('wave_number', DEFAULT_WAVE_NUMBER)
-    omega = params.get('angular_frequency', DEFAULT_ANGULAR_FREQUENCY)
-    phi = params.get('phase', DEFAULT_PHASE)
-
-    eta_i = single_wave_source_displacement(x, y, t, pos, amp, k, omega, phi)
-    total_displacement += eta_i
-
-return total_displacement
-</code></pre>
-<h1 id="-example-usage-conceptual-for-testing-the-functions-">--- Example Usage (Conceptual - for testing the functions) ---</h1>
-<p>if <strong>name</strong> == "<strong>main</strong>":
-    # Define a grid of points (e.g., for a heatmap)
-    grid_size = 100
-    x_coords = np.linspace(-10, 10, grid_size)
-    y_coords = np.linspace(-10, 10, grid_size)
-    X, Y = np.meshgrid(x_coords, y_coords)</p>
-<pre><code>current_time = 0.0 # Snapshot at t=0
-
-# --- Test Single Source ---
-print("Testing Single Source...")
-source1_location = (0, 0)
-displacement_single = single_wave_source_displacement(X, Y, current_time, source1_location)
-print(f"Displacement at (1,1) for single source at (0,0): {single_wave_source_displacement(1, 1, current_time, source1_location):.4f}")
-# To visualize this, you would plot displacement_single as a heatmap or 3D plot.
-
-# --- Test Two Sources ---
-print("\nTesting Two Sources...")
-source2_location = (3, 0)
-source3_location = (-3, 0)
-displacement_two = two_wave_sources_interference(X, Y, current_time, source2_location, source3_location)
-print(f"Displacement at (0,0) for two sources at (3,0) and (-3,0): {two_wave_sources_interference(0, 0, current_time, source2_location, source3_location):.4f}")
-
-# --- Test Multiple Sources (Triangle) ---
-print("\nTesting Multiple Sources (Triangle)...")
-# Assuming identical sources for simplicity
-triangle_sources = [
-    {'pos': (0, 5)},    # Top vertex
-    {'pos': (-4, -3)},  # Bottom-left vertex
-    {'pos': (4, -3)}    # Bottom-right vertex
-    # We can add custom amplitude, k, omega, phi for each if needed
-    # e.g., {'pos': (0,5), 'amplitude': 1.2, 'wave_number': 0.8}
-]
-displacement_triangle = multiple_wave_sources_interference(X, Y, current_time, triangle_sources)
-print(f"Displacement at (0,0) for triangle sources: {multiple_wave_sources_interference(0, 0, current_time, triangle_sources):.4f}")
-
-# --- Test Multiple Sources (Pentagon) ---
-print("\nTesting Multiple Sources (Pentagon)...")
-pentagon_radius = 5
-pentagon_sources = []
-for i in range(5):
-    angle = 2 * np.pi * i / 5 + (np.pi / 2) # Start from top point
-    px = pentagon_radius * np.cos(angle)
-    py = pentagon_radius * np.sin(angle)
-    pentagon_sources.append({'pos': (px, py)})
-
-displacement_pentagon = multiple_wave_sources_interference(X, Y, current_time, pentagon_sources)
-print(f"Displacement at (0,0) for pentagon sources: {multiple_wave_sources_interference(0, 0, current_time, pentagon_sources):.4f}")
-
-print("\nPython functions for wave interference are ready.")
-print("Next steps would involve using these functions to generate data for heatmaps, 3D plots, and animations.")
-</code></pre>
+<h1 id="circular-water-wave-interference-simulation">🌊 Circular Water Wave Interference Simulation</h1>
+<h2 id="task-overview">📘 Task Overview</h2>
+<p>We simulate circular water waves emitted from point sources placed at the vertices of a regular polygon. Using the principle of superposition, we analyze interference patterns (constructive and destructive) formed on the water surface.</p>
+<hr/>
+<h2 id="mathematical-model">📐 Mathematical Model</h2>
+<h3 id="single-disturbance-equation">Single Disturbance Equation</h3>
+<p>The displacement <span class="arithmatex">\( \eta(x, y, t) \)</span> of the water surface at point <span class="arithmatex">\( (x, y) \)</span> and time <span class="arithmatex">\( t \)</span> from a single point source located at <span class="arithmatex">\( (x_0, y_0) \)</span> is:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( A \)</span>: amplitude of the wave  </li>
+<li><span class="arithmatex">\( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)</span>: distance from source  </li>
+<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span>: wave number  </li>
+<li><span class="arithmatex">\( \omega = 2\pi f \)</span>: angular frequency  </li>
+<li><span class="arithmatex">\( \phi \)</span>: initial phase (assumed 0 for coherence)</li>
+</ul>
+<hr/>
+<h3 id="multiple-sources-superposition">Multiple Sources: Superposition</h3>
+<p>For <span class="arithmatex">\( N \)</span> sources placed at the vertices of a regular polygon, the net displacement is:</p>
+<div class="arithmatex">\[
+\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
+\]</div>
+<hr/>
+<h2 id="assumptions">🧠 Assumptions</h2>
+<ul>
+<li>All sources have identical parameters: same <span class="arithmatex">\( A, \lambda, f, \phi \)</span></li>
+<li>Coherent waves (same phase relation)</li>
+<li>Simulation performed in a 2D grid using NumPy</li>
+</ul>
+<hr/>
+<h2 id="python-code-simulation-setup">🐍 Python Code (Simulation Setup)</h2>
+<p>```python
+import numpy as np</p>
+<h1 id="wave-parameters">Wave parameters</h1>
+<p>A = 1.0           # Amplitude
+λ = 2.0           # Wavelength
+f = 1.0           # Frequency (Hz)
+k = 2 * np.pi / λ # Wave number
+ω = 2 * np.pi * f # Angular frequency
+φ = 0             # Initial phase</p>
+<h1 id="grid-setup">Grid setup</h1>
+<p>x = np.linspace(-10, 10, 500)
+y = np.linspace(-10, 10, 500)
+X, Y = np.meshgrid(x, y)</p>
+<h1 id="time-parameter-for-snapshot">Time parameter for snapshot</h1>
+<p>t = 0</p>
+<p>def wave_from_source(x0, y0, X, Y, t):
+    r = np.sqrt((X - x0)<strong>2 + (Y - y0)</strong>2)
+    # To avoid division by zero at r=0
+    r[r == 0] = 1e-6
+    η = A / np.sqrt(r) * np.cos(k * r - ω * t + φ)
+    return η</p>
+<h1 id="example-single-source-at-origin">Example: Single source at origin</h1>
+<p>sources = [(0, 0)]</p>
+<h1 id="calculate-superposition">Calculate superposition</h1>
+<p>η_sum = np.zeros_like(X)
+for x0, y0 in sources:
+    η_sum += wave_from_source(x0, y0, X, Y, t)</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
