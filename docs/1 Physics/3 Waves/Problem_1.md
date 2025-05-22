@@ -122,37 +122,4 @@ These interference effects depend on:
 
 ![alt text](image-10.png)
 
-project/
-│
-├── index.html
-├── style.css  (isteğe bağlı)
-└── assets/
-    └── two_sources_interference.gif
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Wave Interference Animation</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f5f5f5;
-    }
-    img {
-      width: 80%;
-      max-width: 600px;
-      border: 2px solid #444;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <img src="assets/two_sources_interference.gif" alt="Wave Interference Animation">
-
-</body>
-</html>
+![alt text](two_sources_interference.gif)
