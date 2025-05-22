@@ -126,7 +126,7 @@ project/
 │
 ├── index.html
 ├── style.css  (isteğe bağlı)
-└── assets/
+└── assets1/
     └── two_sources_interference.gif
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +151,7 @@ project/
 </head>
 <body>
 
-  <img src="assets/two_sources_interference.gif" alt="Wave Interference Animation">
+  <img src="assets1/two_sources_interference.gif" alt="Wave Interference Animation">
 
 </body>
 </html>
