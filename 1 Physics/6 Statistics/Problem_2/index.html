@@ -172,6 +172,185 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="estimating-pi-with-monte-carlo-simulation-techniques">Estimating <span class="arithmatex">\(\pi\)</span> with Monte Carlo Simulation Techniques</h1>
+<h2 id="overview">Overview</h2>
+<p>Monte Carlo methods rely on random sampling to approximate solutions to problems that may be deterministic in nature. One elegant use case is estimating the mathematical constant <span class="arithmatex">\(\pi\)</span> using random events and geometric relationships.</p>
+<p>This experiment introduces two different approaches to estimate <span class="arithmatex">\(\pi\)</span>:</p>
+<ul>
+<li>A <strong>geometric simulation</strong> involving random points inside a square and circle</li>
+<li>A <strong>probabilistic simulation</strong> inspired by <strong>Buffon’s Needle problem</strong></li>
+</ul>
+<p>Both methods allow us to explore randomness, convergence, and the power of simulation in numerical estimation.</p>
+<hr/>
+<h2 id="method-1-area-based-estimation-using-a-unit-circle">Method 1: Area-Based Estimation Using a Unit Circle</h2>
+<h3 id="concept">Concept</h3>
+<p>Consider a square centered at the origin with side length 2. A circle of radius 1 is perfectly inscribed in the square.</p>
+<ul>
+<li>Area of the square = 4  </li>
+<li>Area of the circle = <span class="arithmatex">\(\pi\)</span> </li>
+<li>Therefore, the <strong>probability</strong> that a point randomly placed within the square also lies inside the circle is:<br/>
+<span class="arithmatex">\(\pi / 4\)</span></li>
+</ul>
+<p>Using this, we can estimate <span class="arithmatex">\(\pi\)</span> with the formula:</p>
+<p>$ \pi \approx 4 \times \left( \frac{\text{Number of points inside the circle}}{\text{Total number of points}} \right) $</p>
+<hr/>
+<h3 id="simulation-algorithm">Simulation Algorithm</h3>
+<ol>
+<li>Generate <span class="arithmatex">\(n\)</span> random coordinates in the square:<br/>
+   Each point has <span class="arithmatex">\(x, y \in [-1, 1]\)</span></li>
+<li>For each point, determine whether it falls inside the circle:<br/>
+   Condition: <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span></li>
+<li>Count how many points satisfy this condition</li>
+<li>Estimate <span class="arithmatex">\(\pi\)</span> using the derived proportion</li>
+</ol>
+<hr/>
+<h3 id="visualization-plan">Visualization Plan</h3>
+<ul>
+<li>Scatterplot showing random points</li>
+<li>Points <strong>inside</strong> the circle: colored one way (e.g., blue)</li>
+<li>Points <strong>outside</strong> the circle but inside the square: different color (e.g., red)</li>
+<li>Overlaid boundary of the circle for visual reference</li>
+</ul>
+<hr/>
+<h3 id="observations">Observations</h3>
+<ul>
+<li>Accuracy improves as the number of points increases</li>
+<li>
+<p>Convergence follows the Law of Large Numbers:
+  $ \text{Estimation error} \propto \frac{1}{\sqrt{n}} $</p>
+</li>
+<li>
+<p>While intuitive and simple, the convergence rate is relatively slow</p>
+</li>
+</ul>
+<hr/>
+<h2 id="method-2-buffons-needle-a-probabilistic-pi-estimation">Method 2: Buffon’s Needle – A Probabilistic <span class="arithmatex">\(\pi\)</span> Estimation</h2>
+<h3 id="concept_1">Concept</h3>
+<p>Buffon's Needle is a probability-based technique that involves dropping a needle of length <span class="arithmatex">\(L\)</span> on a floor with parallel lines spaced <span class="arithmatex">\(d\)</span> units apart. The chance that the needle crosses one of the lines is:</p>
+<p>$ P = \frac{2L}{d\pi} $</p>
+<p>By simulating this experiment and tracking how many times the needle crosses a line, we can approximate <span class="arithmatex">\(\pi\)</span> by solving for it:</p>
+<p>$ \pi \approx \frac{2L \cdot n}{d \cdot h} $</p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span> = total number of needle drops  </li>
+<li><span class="arithmatex">\(h\)</span> = number of crosses  </li>
+<li><span class="arithmatex">\(L\)</span> = needle length  </li>
+<li><span class="arithmatex">\(d\)</span> = line spacing (must be <span class="arithmatex">\(\geq L\)</span>)</li>
+</ul>
+<hr/>
+<h3 id="simulation-algorithm_1">Simulation Algorithm</h3>
+<ol>
+<li>Choose constants:  </li>
+<li>Needle length <span class="arithmatex">\(L\)</span> </li>
+<li>Distance between lines <span class="arithmatex">\(d\)</span> (where <span class="arithmatex">\(L \leq d\)</span>)</li>
+<li>Repeat the following <span class="arithmatex">\(n\)</span> times:</li>
+<li>Randomly select the center of the needle's vertical position</li>
+<li>Randomly choose an angle <span class="arithmatex">\(\theta\)</span> between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span></li>
+<li>
+<p>Use geometry to determine whether the needle crosses a line:
+     $ \text{Crosses if: } \frac{L}{2} \cdot \sin(\theta) \geq y_{\text{distance to nearest line}} $</p>
+</li>
+<li>
+<p>Count the number of crossing events (<span class="arithmatex">\(h\)</span>)</p>
+</li>
+<li>Estimate <span class="arithmatex">\(\pi\)</span> with the formula above</li>
+</ol>
+<hr/>
+<h3 id="visualization-plan_1">Visualization Plan</h3>
+<ul>
+<li>Plot several needles:</li>
+<li>Red: those that cross a line</li>
+<li>Blue: those that don’t</li>
+<li>Add horizontal grid lines to represent the line spacing</li>
+<li>Useful for visually validating crossing behavior</li>
+</ul>
+<hr/>
+<h3 id="observations_1">Observations</h3>
+<ul>
+<li>This method is sensitive to trigonometric calculations</li>
+<li>Requires large samples for reasonable accuracy</li>
+<li>Offers a deeper probabilistic interpretation of <span class="arithmatex">\(\pi\)</span></li>
+</ul>
+<hr/>
+<h2 id="output-requirements">Output Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation Code</td>
+<td>Python/NumPy code to run both methods</td>
+</tr>
+<tr>
+<td>Scatterplots</td>
+<td>For circle-based point generation</td>
+</tr>
+<tr>
+<td>Needle Drop Visuals</td>
+<td>For Buffon’s simulation</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\pi\)</span> vs Sample Size Plot</td>
+<td>Tracks convergence and error for both methods</td>
+</tr>
+<tr>
+<td>Comparative Summary</td>
+<td>Highlights strengths, weaknesses, and convergence</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<h2 id="summary-comparison">Summary Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Convergence Rate</th>
+<th>Visualization Clarity</th>
+<th>Conceptual Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit Circle</td>
+<td>Geometric Area</td>
+<td>Moderate</td>
+<td>Very High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Buffon’s Needle</td>
+<td>Probabilistic</td>
+<td>Slow</td>
+<td>Moderate</td>
+<td>Very High</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="best-practices-for-simulation">Best Practices for Simulation</h2>
+<ul>
+<li>Always validate random sampling domains (e.g., angle between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span>)</li>
+<li>Use sufficient trials (e.g., <span class="arithmatex">\(\geq 10,\!000\)</span>) to see meaningful convergence</li>
+<li>Visualize results to confirm spatial or geometric logic</li>
+<li>Set random seed for reproducibility if needed</li>
+</ul>
+<hr/>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>These simulations reinforce several core ideas:</p>
+<ul>
+<li>Simulation can approximate even complex constants like <span class="arithmatex">\(\pi\)</span></li>
+<li>Randomness and geometry can be blended for insight</li>
+<li>The <strong>Law of Large Numbers</strong> governs convergence</li>
+<li>Monte Carlo methods provide practical, educational tools in statistics and numerical analysis</li>
+</ul>
+<p>Both approaches offer distinct learning opportunities — one via area comparison and one through probabilistic crossing — showing that even a simple constant like <span class="arithmatex">\(\pi\)</span> connects deeply to randomness, geometry, and probability.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
