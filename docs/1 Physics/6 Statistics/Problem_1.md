@@ -113,3 +113,5 @@ Each cell displays a histogram of sample means for the corresponding setup, with
 This simulation supports the Central Limit Theorem across a range of population shapes. As sample size increases, the distribution of the sample mean reliably trends toward normality—even when starting from skewed or discrete populations. The rate of this convergence depends on the shape and variance of the original population.
  
 This insight helps justify the widespread use of normal-based methods in statistical inference, especially when dealing with large sample sizes.
+
+![alt text](clt_exponential_animation.gif)
