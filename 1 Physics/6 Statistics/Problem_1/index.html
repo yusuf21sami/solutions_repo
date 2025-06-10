@@ -172,6 +172,135 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="central-limit-theorem-clt-demonstration-through-simulation">Central Limit Theorem (CLT) Demonstration Through Simulation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The <strong>Central Limit Theorem (CLT)</strong> is a core principle in probability and statistics. It states that regardless of the original distribution of a population, the distribution of the sample means will approximate a <strong>normal distribution</strong> as the sample size becomes large.</p>
+<p>This result is the foundation of many statistical techniques and allows researchers and analysts to draw conclusions about populations using sample data, even when the population distribution is unknown or non-normal.</p>
+<hr/>
+<h2 id="purpose-of-the-simulation">Purpose of the Simulation</h2>
+<p>This simulation aims to:</p>
+<ul>
+<li>Model different population distributions</li>
+<li>Draw multiple random samples of varying sizes</li>
+<li>Observe the behavior of the <strong>sample means</strong></li>
+<li>Visually and statistically confirm the Central Limit Theorem</li>
+</ul>
+<hr/>
+<h2 id="simulation-framework">Simulation Framework</h2>
+<h3 id="population-types">Population Types</h3>
+<p>We generate synthetic populations of <strong>100,000 data points</strong> from each of the following distributions:</p>
+<ol>
+<li><strong>Uniform Distribution [0, 1]</strong> — continuous, bounded, and symmetric</li>
+<li><strong>Exponential Distribution (λ = 1)</strong> — continuous and right-skewed</li>
+<li><strong>Binomial Distribution (n = 10, p = 0.5)</strong> — discrete and roughly symmetric</li>
+</ol>
+<p>These offer a diverse view of population shapes: flat, skewed, and discrete.</p>
+<h3 id="sampling-plan">Sampling Plan</h3>
+<p>For each population:</p>
+<ul>
+<li>Randomly draw <strong>1000 samples</strong> for each of the following sizes: <strong>5, 10, 30, 50</strong></li>
+<li>Compute the <strong>mean of each sample</strong></li>
+<li>Collect and store the resulting sample means</li>
+<li>Plot a histogram for each collection of sample means</li>
+<li>Overlay the <strong>normal probability density function</strong> using the observed mean and standard deviation</li>
+</ul>
+<hr/>
+<h2 id="visualization-layout">Visualization Layout</h2>
+<p>The results will be organized in a 3x4 grid:</p>
+<ul>
+<li><strong>Rows</strong>: Represent different population distributions</li>
+<li><strong>Columns</strong>: Correspond to increasing sample sizes (5, 10, 30, 50)</li>
+</ul>
+<p>Each cell displays a histogram of sample means for the corresponding setup, with a normal curve for comparison.</p>
+<p><em>(Insert visual grid here)</em></p>
+<hr/>
+<p><img alt="alt text" src="../image.png"/></p>
+<h2 id="results-and-analysis">Results and Analysis</h2>
+<h3 id="uniform-distribution-0-1">Uniform Distribution [0, 1]</h3>
+<ul>
+<li><strong>Sample size 5</strong>: Slightly irregular, but already symmetric</li>
+<li><strong>Sample size 10</strong>: Histogram becomes smoother</li>
+<li><strong>Sample size 30</strong>: Approximates a normal distribution</li>
+<li><strong>Sample size 50</strong>: Very close to normal; bell-shaped</li>
+</ul>
+<h3 id="exponential-distribution-1">Exponential Distribution (λ = 1)</h3>
+<ul>
+<li><strong>Sample size 5</strong>: Skewed distribution of means</li>
+<li><strong>Sample size 10</strong>: Skew reduces slightly</li>
+<li><strong>Sample size 30</strong>: Nearly symmetric</li>
+<li><strong>Sample size 50</strong>: Strong resemblance to a normal curve</li>
+</ul>
+<h3 id="binomial-distribution-n-10-p-05">Binomial Distribution (n = 10, p = 0.5)</h3>
+<ul>
+<li><strong>Sample size 5</strong>: Roughly symmetric</li>
+<li><strong>Sample size 10</strong>: Smoother, narrower peak</li>
+<li><strong>Sample size 30</strong>: Clearly bell-shaped</li>
+<li><strong>Sample size 50</strong>: Almost indistinguishable from normal</li>
+</ul>
+<hr/>
+<h2 id="effect-of-sample-size">Effect of Sample Size</h2>
+<table>
+<thead>
+<tr>
+<th>Sample Size</th>
+<th>Behavior of Sampling Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Often shows noticeable irregularities</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Becomes more stable and less skewed</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Resembles a normal distribution closely</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Strong convergence to normal shape</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="effect-of-population-characteristics">Effect of Population Characteristics</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution Type</th>
+<th>Skewness</th>
+<th>Impact on CLT Convergence</th>
+<th>Variance Considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uniform [0, 1]</td>
+<td>No</td>
+<td>Rapid convergence</td>
+<td>Lower spread in means</td>
+</tr>
+<tr>
+<td>Exponential (λ = 1)</td>
+<td>Yes</td>
+<td>Slower convergence due to skew</td>
+<td>High variability delays normal shape</td>
+</tr>
+<tr>
+<td>Binomial (n=10, p=0.5)</td>
+<td>No</td>
+<td>Quick convergence</td>
+<td>Centered and compact around mean</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="conclusion">Conclusion</h2>
+<p>This simulation supports the Central Limit Theorem across a range of population shapes. As sample size increases, the distribution of the sample mean reliably trends toward normality—even when starting from skewed or discrete populations. The rate of this convergence depends on the shape and variance of the original population.</p>
+<p>This insight helps justify the widespread use of normal-based methods in statistical inference, especially when dealing with large sample sizes.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
