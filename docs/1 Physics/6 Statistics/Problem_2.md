@@ -159,3 +159,5 @@ These simulations reinforce several core ideas:
 - Monte Carlo methods provide practical, educational tools in statistics and numerical analysis
  
 Both approaches offer distinct learning opportunities — one via area comparison and one through probabilistic crossing — showing that even a simple constant like $\pi$ connects deeply to randomness, geometry, and probability.
+
+![alt text](monte_carlo_pi_simulasyonu.gif)
