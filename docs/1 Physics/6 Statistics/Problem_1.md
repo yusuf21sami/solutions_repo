@@ -59,7 +59,7 @@ Each cell displays a histogram of sample means for the corresponding setup, with
 ---
  ![alt text](image.png)
 
-
+![alt text](image-2.png)
 
 
 ## Results and Analysis
